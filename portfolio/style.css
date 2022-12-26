@@ -1,0 +1,26 @@
+main{
+    padding: 40px;
+}
+
+.card{
+    background-color: #dfdfdf;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse; 
+}
+section p{
+    width: 400px;
+}
+section .my-name{
+font-size: 30px;
+}
+footer{
+    text-align: center;
+}
+
+
