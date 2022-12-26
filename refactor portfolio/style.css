@@ -1,0 +1,30 @@
+.main{
+    padding: 40px;
+}
+
+.card{
+    background-color: #dfdfdf;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse; 
+}
+
+.info p{
+    width: 400px;
+}
+.info  .my-name{
+font-size: 30px;
+}
+.info  .my-name span{
+    color: red;
+}
+footer{
+    text-align: center;
+}
+
+
