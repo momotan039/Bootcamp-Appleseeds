@@ -1,0 +1,95 @@
+.center{
+    margin: auto;
+    width: 350px;
+    text-align: center;
+}
+
+.center button{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: gray;
+}
+.center .container{
+    clear: both;
+    padding: 20px 0;
+}
+.center .container button:nth-of-type(1){
+   font-size: 20px;
+   float: left;
+}
+.center .container button:nth-of-type(2){
+    float: right;
+ }
+
+
+.flat .register{
+    background-color: rgba(6, 6, 188, 0.77);
+}
+
+.flat .register:hover{
+    background-color: rgba(6, 6, 188, 0.562);
+}
+
+
+.flat .submit{
+    background-color: rgba(167, 191, 34, 0.77);
+}
+
+.flat .submit:hover{
+    background-color: rgba(211, 208, 17, 0.562);
+}
+.round button{
+    border-radius: 20px;
+}
+.round .register{
+    background-color: green;
+}
+.round .register:hover{
+    background-color: rgb(39, 161, 39);
+}
+.round .submit{
+    background-color: crimson;
+}
+.round .submit:hover{
+    background-color:rgb(152, 25, 51)
+}
+
+.flat-ghost button{
+    border-radius: 8px;
+}
+
+.flat-ghost .register{
+    border: 2px solid red;
+}
+.flat-ghost .register:hover{
+    background-color: red;
+}
+
+.flat-ghost .submit{
+    border: 2px solid pink;
+}
+.flat-ghost .submit:hover{
+    background-color: pink;
+}
+
+
+
+.round-ghost button{
+    border-radius: 20px;
+}
+
+.round-ghost .register{
+    border: 2px solid rgb(201, 201, 27);
+}
+.round-ghost .register:hover{
+    background-color: rgb(201, 201, 27);
+}
+
+.round-ghost .submit{
+    border: 2px solid skyblue;
+}
+.round-ghost .submit:hover{
+    background-color: skyblue;
+}

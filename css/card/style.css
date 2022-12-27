@@ -1,0 +1,16 @@
+.card{
+    background-color: rgba(255, 0, 0, 0.464);
+    display: inline-block;
+}
+.card .body{
+    padding: 10px;
+}
+
+.card img{
+    width: 500px;
+}
+
+.card a{
+    margin-right: 5px;
+    color: rgba(255, 0, 0, 0.518);
+}
