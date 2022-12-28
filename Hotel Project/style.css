@@ -1,0 +1,289 @@
+/* Normlization */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:#333;
+    --secondry-color:white;
+    --third--color:#f7c08a
+}
+html,body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    margin: auto;
+    max-width: 1200px;
+}
+/* Start Header Style */
+header{
+    background-color: var(--main-color);
+}
+header nav{
+    overflow: auto;
+    padding: 20px;
+}
+
+header nav .logo{
+color: var(--secondry-color);
+float: left;
+}
+header nav .menu{
+    color: var(--secondry-color);
+    float: right;
+}
+header nav .menu ul a{
+    color: var(--secondry-color);
+    text-decoration: none;
+    padding: 30px;
+}
+header nav .menu ul a:hover{
+    color: var(--third--color);
+    background-color: #444;
+}
+header nav .menu ul a li{
+    display: inline;
+}
+/* End Header Style */
+
+/* Start Section 1 */
+.section1{
+    height: 600px;
+    position: relative;
+    
+}
+.section1 .wallpaper{
+    position: absolute;
+    background: url(images/showcase.jpg);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+.section1 .text{
+   color: var(--secondry-color);
+   margin: auto;
+   width: 80%;
+   text-align: center;
+   padding-top: 150px;
+
+}
+.section1 .text .title{
+    font-size: 54px;
+    margin-bottom: 40px;
+}
+.section1 .text .title span{
+    color:var(--third--color)
+}
+.section1 .text p{
+    font-size: 18px;
+}
+.section1 .text .about-button{
+    display: inline-block;
+    padding: 20px;
+    background-color: var(--main-color);
+    margin-top: 30px;
+}
+.section1 .text .about-button:hover{
+    background-color: var(--third--color);
+}
+.section1 .text .about-button a{
+    color: white;
+    text-decoration: none;
+}
+/* End Section 1 */
+
+/* Start history section */
+.hisotry-section{
+    height: 330px;
+    overflow: auto;
+    
+}
+.hisotry-section .left{
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-image: url(images/photo-1.jpg);
+}
+.hisotry-section .right{
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 20px 10px;
+}
+.hisotry-section .right .title{
+    color: var(--secondry-color);
+    margin-bottom: 30px;
+}
+.hisotry-section .right .title span{
+    color: var(--third--color);
+}
+.hisotry-section .right p{
+    color: white;
+    margin-bottom: 30px;
+}
+.hisotry-section .right .read-me-button{
+    display: inline-block;
+    padding: 20px;
+    background-color:var(--secondry-color);
+    margin-top: 30px;
+}
+
+.hisotry-section .right .read-me-button a{
+text-decoration: none;
+color: black;
+}
+
+/* End history section */
+
+/* Start Feature Section */
+.features-section div{
+    height: 270px;
+    width: 33%;
+    padding-top: 30px;
+    text-align: center;
+    display: inline-block;
+}
+.features-section div:nth-child(2){
+    background-color: var(--third--color);
+}
+.features-section div i{
+color: var(--main-color);
+margin: 10px 0;
+}
+.features-section div p{
+    line-height: 2;
+    margin-top: 20px;
+}
+/* End Feature Section */
+
+/* Start About Section */
+.about-section{
+padding:20px;
+height: 350px;
+overflow: auto;
+}
+
+.about-section div {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+.about-section .text{
+    float: left;
+}
+.about-section .text .title{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.about-section .text .title span{
+    color: var(--third--color);
+}
+.about-section .text p{
+    margin-bottom: 17px;
+}
+.about-section .image-container{
+float: right;
+text-align: center;
+}
+.about-section .image-container .image{
+    background-image: url(images/photo-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+/* End About Section */
+/* Start Guests Section */
+.guests-section{
+    background: url(images/test-bg.jpg);
+    background-position: center;
+    padding-top: 80px;
+    height: 600px;
+}
+.guests-section .title{
+    color: var(--secondry-color);
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.guests-section .comment{
+    background-color: var(--third--color);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 0 50px 50px 50px;
+}
+.guests-section .comment img{
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+}
+/* End Guests Section */
+
+/* Start Contact us Section */
+.contact-us-section{
+    padding: 20px;
+}
+.contact-us-section .title{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.contact-us-section .field{
+    margin-top: 20px;
+}
+.contact-us-section .field label{
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-us-section .field input,
+.contact-us-section .field textarea
+{
+    padding: 10px;
+    width: 100%;
+    border: solid thin var(--main-color);
+}
+.contact-us-section .submit-button{
+    padding: 15px  25px;
+    background-color: var(--main-color);
+    color: var(--secondry-color);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.contact-us-section .submit-button:hover{
+    background-color: var(--third--color);
+    color: var(--main-color);
+}
+/* End Contact us Section */
+/* Start Contact us Ways */
+.contacts-ways-section{
+    padding-top: 58px;
+    padding-bottom: 50px;
+text-align: center;
+color: var(--secondry-color);
+background-color: var(--main-color);
+}
+.contacts-ways-section div{
+    width: 33%;
+    display: inline-block;
+}
+.contacts-ways-section .title{
+margin-bottom: 20px;
+margin-top: 10px;
+}
+/* End Contact us Ways */
+
+/* Start Footer */
+footer{
+    background-color:rgb(65, 61, 61);
+    padding: 40px;
+    color: var(--secondry-color);
+    text-align: center;
+}
+/* End Footer */
