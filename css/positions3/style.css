@@ -1,0 +1,38 @@
+div{
+    border: solid 5px black;
+    color: white;
+    font-weight: bold;
+}
+.one{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: red;
+}
+
+.two{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    right: -26%;
+    top: 70%;
+    background-color: green;
+}
+
+.three{
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    left: -57%;
+    top: 101%;
+    background-color: yellowgreen;
+}
+
+.four{
+    width: 60px;
+    height: 430px;
+    position: absolute;
+    right: 7%;
+    bottom: -66%;
+    background-color: blue;
+}
