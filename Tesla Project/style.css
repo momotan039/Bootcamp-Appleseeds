@@ -1,0 +1,493 @@
+:root{
+    --main-color:#FFFFFF;
+    --secondry-color:#515458;
+    --text-color:#6F7275
+}
+@font-face {
+    font-family: 'gotham thin';
+    src: url(fonts/Gotham\ Thin.otf);
+}
+@font-face {
+    font-family: 'gotham book';
+    src: url(fonts/Gotham\ Book.otf);
+}
+/* Normlization */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gotham book','gotham thin','Montserrat', sans-serif;
+}
+
+html,body{
+    scroll-behavior: smooth;
+}
+button{
+    transition: .3s all;
+}
+button:hover{
+    cursor: pointer;
+}
+.btn-light{
+    background-color: transparent;
+    border: 3px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px 18px;
+    height: 47px;
+    font-weight: bold;
+}
+.btn-light:hover{
+    color: black;
+    background-color: var(--main-color);
+}
+.btn-dark{
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px 18px;
+    height: 47px;
+    font-weight: bold;
+}
+.btn-dark:hover{
+    color: var(--main-color);
+    background-color: black;
+}
+.btn-radius{
+    height: 36px;
+    width: 36px;
+    border-radius: 21px;
+    font-size: 28px;
+}
+.btn-radius:hover{
+    color: var(--main-color);
+    background-color: black;
+}
+.top-message{
+    color: var(--secondry-color);
+    background-color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.top-message a{
+    color: var(--secondry-color);
+}
+
+header{
+position: fixed;
+width: 100%;
+z-index: 9999;
+}
+header *{
+    color: var(--main-color);
+}
+header a:not(header .top-message a){
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+header nav{
+    text-align: center;
+   padding: 20px 30px;
+}
+header nav .logo{
+    float:left;
+    width:20%;
+}
+header nav .logo svg{
+    width: auto;
+}
+header nav .models{
+    width: 60%;
+    float: left;
+}
+
+header nav .menu{
+float: right;
+}
+
+/* Start Static Navigation */
+.static-navigation{
+    position: fixed;
+    left: 10px;
+    top: 50%;
+}
+.static-navigation a{
+    text-decoration: none;
+}
+.static-navigation .row{
+    position: relative;
+    padding-left: 9px;
+    margin-bottom: -14px;
+    height: 30px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.static-navigation .row:hover span{
+    display: inline;
+}
+.static-navigation .row span{
+    font-weight: bold;
+    color: #868D90;
+    text-transform: uppercase;
+    display: none;
+    font-size: 12px;
+}
+.static-navigation .row::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: var(--secondry-color);
+    left: 2px;
+    top: 0;
+}
+.static-navigation .row.selected::before{
+    width: 3px;
+    background-color: var(--main-color);
+}
+
+/* End Static Navigation */
+/* Start Model3 section */
+.model3-section{
+    height: 900px;
+    background-image: url(images/mode3-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 140px;
+    text-align: center;
+    position: relative;
+    background-position: center;
+}
+
+.model3-section *{
+    color: var(--main-color);
+}
+
+.model3-section .title{
+    margin-bottom: 10px;
+}
+.model3-section .bottom-container{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+.model3-section .bottom-container .center{
+    height: 100px;
+    max-width: 50%;
+    margin: auto;
+}
+.model3-section .bottom-container .center> div{
+    width: 25%;
+    float: left;
+    font-weight: bold;
+    font-size: 28px;
+}
+.model3-section .bottom-container .center div span{
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.model3-section .bottom-container .center div button{
+    width: 100%;
+}
+
+.model3-section .bottom-container .center div.speed .icons{
+    position: relative;
+    display: inline-block;
+}
+.model3-section .bottom-container .center div.speed svg:nth-child(1){
+    width: 40px;
+    height: 23px;
+}
+
+.model3-section .bottom-container .center div.speed svg:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    left: 62%;
+    transform: rotate(90deg);
+}
+/* End Model3 section */
+
+/* Start safety section */
+.safety-section{
+    height: 900px;
+    overflow: auto;
+    padding-top: 50px;
+}
+.safety-section .left{
+    float: left;
+    width: 80%;
+    height: 91%;
+    background-image: url(images/model3-2-2.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.safety-section .left img{
+    width: 100%;
+}
+.safety-section .right{
+    float: right;
+    width: 20%;
+    position: relative;
+    height: 100%;
+}
+.safety-section .right h3{
+    color: var(--secondry-color);
+}
+.safety-section .right .title{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.safety-section .right  h4.sub-title{
+    font-weight: bold;
+    color: var(--secondry-color);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.safety-section .right p{
+    max-width: 340px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+.safety-section .right a{
+    color:var(--secondry-color);
+    text-decoration: underline;
+}
+.safety-section .right .buttons{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+.safety-section .right .buttons > div{
+    height: 45px;
+}
+
+.safety-section .right .buttons .learn-more{
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.safety-section .right .buttons .learn-more a{
+    text-decoration: none;
+}
+.safety-section .right .buttons .learn-more a:hover button{
+   background-color: black;
+   color: white;
+}
+.safety-section .right .buttons .learn-more span{
+font-weight: bold;
+float: right;
+padding-top: 10px;
+margin-left: 6px;
+}
+.safety-section .right .buttons .buy-now{
+    float: right;
+    width: 60%;
+    padding-right: 10px;
+}
+.safety-section .right .buttons .buy-now .btn-dark{
+    width: 100%;
+}
+/* End safety section */
+
+/*Start Performance Section*/
+.performace-section{
+    height: 900px;
+}
+.performace-section .image{
+    background-image: url(images/model3-3.jpg);
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.performace-section .image .bottom-container{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    color: var(--main-color) !important;
+    text-align: center;
+}
+.performace-section .image .bottom-container .center{
+    height: 100px;
+    max-width: 50%;
+    margin: auto;
+
+}
+.performace-section .image .bottom-container .center> div{
+    width: 33%;
+    float: left;
+    font-weight: bold;
+    font-size: 28px;
+    padding: 0 25px;
+}
+.performace-section .image .bottom-container .center div p{
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.performace-section .image .bottom-container .center div.speed .icons{
+    position: relative;
+    display: inline-block;
+}
+.performace-section .image  .bottom-container .center div.speed svg:nth-child(1){
+    width: 40px;
+    height: 23px;
+}
+
+.performace-section .image  .bottom-container .center div.speed svg:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    left: 62%;
+    transform: rotate(90deg);
+}
+
+.performace-section .info{
+    width: 70%;
+    margin: auto;
+    padding-top: 41px;
+}
+.performace-section .info .left{
+    width: 30%;
+    float: left;
+}
+.performace-section .info .left .subtitle{
+    color: var(--text-color);
+}
+.performace-section .info .left .title{
+    margin-bottom: 20px;
+}
+
+
+
+.performace-section .info .left .buttons .learn-more{
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.performace-section .info .left .buttons .learn-more a{
+    text-decoration: none;
+}
+.performace-section .info .left .buttons .learn-more a:hover button{
+   background-color: black;
+   color: white;
+}
+.performace-section .info .left .buttons .learn-more span{
+font-weight: bold;
+color: var(--secondry-color);
+float: right;
+padding-top: 10px;
+margin-left: 6px;
+}
+.performace-section .info .left .buttons .buy-now{
+    float: right;
+    width: 60%;
+    padding-right: 10px;
+}
+.performace-section .info .left .buttons .buy-now .btn-dark{
+    width: 100%;
+}
+
+.performace-section .info .right{
+    float: right;
+    width: 60%;
+}
+.performace-section .info .right p{
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 10px;
+    width: 100%;
+}
+.performace-section .info .right p a{
+color: #515458;
+}
+/*End Performance Section*/
+
+
+/*Start question center */
+.question-center .message-button{
+    position: fixed;
+    right: 2%;
+    top: 86%;
+    width: 53px;
+    height: 53px;
+    background: var(--main-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 50%), 0 0 0 0 grey;
+}
+.question-center .card{
+    position: fixed;
+    right: 2%;
+    top: 100%;
+    height: 600px;
+    width: 435px;
+    border-radius: 10px;
+    background: var(--main-color);
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 50%), 0 0 0 0 grey;
+    transition: .3s all;
+}
+.question-center .card.show{
+    top: 33%;
+}
+
+.question-center .card .header {
+    text-align: center;
+    padding-top: 20px;
+}
+.question-center .card .header label{
+color: var(--secondry-color);
+font-weight: bold;
+}
+.question-center .card .header .close-btn{
+    position: absolute;
+    right: 21px;
+    top: 15px;
+    cursor: pointer;
+}
+.question-center .card .body{
+    padding: 35px 20px;
+}
+.question-center .card .body label{
+font-size: 26px;
+} 
+.question-center .card .body p.describe {
+color: var(--text-color);
+width: 80%;
+margin-top: 20px;
+line-height: 1.4;
+}
+.question-center .card .body .buttons{
+    text-align: center;
+margin-top: 30px;
+}
+.question-center .card .body .buttons a{
+    text-decoration: none;
+    color: var(--secondry-color);
+    font-weight: bold;
+}
+.question-center .card .body .buttons a .button{
+    border: 1px solid;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/*End question center */
