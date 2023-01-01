@@ -1,0 +1,18 @@
+
+.flex{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.flex .box{
+    width: 220px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+@media (max-width:480px) {
+   .flex{
+    flex-direction: column;
+   }
+}

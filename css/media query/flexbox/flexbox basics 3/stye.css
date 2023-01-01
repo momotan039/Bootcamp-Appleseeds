@@ -1,0 +1,29 @@
+
+.flex{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 400px;
+    background: yellow;
+}
+.flex .box{
+    width: 120px;
+    height: 120px;
+    
+}
+.flex .box:nth-child(1){
+    background: black;
+}
+
+.flex .box:nth-child(3){
+    background:red;
+}
+.flex .box:nth-child(2){
+    background: green;
+}
+@media (max-width:480px) {
+   .flex{
+    flex-direction: column;
+   }
+}
+
