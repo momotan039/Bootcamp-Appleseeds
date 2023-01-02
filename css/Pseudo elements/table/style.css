@@ -1,0 +1,19 @@
+table{
+    width: 50%;
+    font-family: 'Courier New', Courier, monospace;
+}
+table thead tr{
+    color: white;
+    background-color: teal;
+    border-radius: 20px;
+    padding: 10px;
+    height: 54px;
+    font-size: 30px;
+}
+table thead tr th{
+    text-align: start;
+}
+table,table tr {
+    border-collapse: collapse;
+    border-radius: 30px;
+}

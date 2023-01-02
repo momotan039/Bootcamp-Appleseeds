@@ -1,0 +1,50 @@
+body{
+    background-color: aliceblue;
+}
+header .title{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: teal;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+.story{
+    padding: 0 60px 60px 60px;
+}
+.story .container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.story p{
+    line-height: 2;
+    font-weight: bold;
+    font-size: 20px;
+   
+}
+
+
+.story p .translate{
+    color: teal;
+    cursor: pointer;
+    position: relative;
+}
+.story p .translate::before{
+    position: absolute;
+    top: -50px;
+    content: attr(data-meaning) "translate not available";
+    color: white;
+    background-color: rgb(0, 102, 255);
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px;
+    display: none;
+    width: max-content;
+}
+.story p .translate:hover::before{
+display: initial;
+}

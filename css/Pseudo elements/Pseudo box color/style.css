@@ -1,0 +1,15 @@
+.box{
+    height: 250px;
+    width: 250px;
+    background-color: red;
+    position: relative;
+}
+
+.box::after{
+    position: absolute;
+    content: "";
+    background-color: blue;
+    height: 100%;
+    width: 50%;
+}
+
