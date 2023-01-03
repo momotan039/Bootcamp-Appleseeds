@@ -1,0 +1,48 @@
+header{
+}
+
+header nav{
+    margin: auto;
+    width: 80%;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    margin-right: 50px;
+}
+
+header nav a::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    top: 0;
+    height: 3px;
+    background-color: rgb(167, 13, 13);
+    border-radius: 10px;
+    transition: width .3s;
+}
+
+header nav a::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    right: 0;
+    top: 100%;
+    height: 3px;
+    background-color: rgb(167, 13, 13);
+    border-radius: 10px;
+    transition: width .3s;
+}
+header nav a:hover::after,
+header nav a:hover::before
+{
+    width: 100%;
+}

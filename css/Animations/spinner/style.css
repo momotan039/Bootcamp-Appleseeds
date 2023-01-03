@@ -1,0 +1,100 @@
+.spinners{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+height: 100vh;
+}
+
+.spinners div{
+background-color: black;
+width: 200px;
+height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.spinners div:nth-of-type(1) div{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   border: 5px solid;
+   border-top-color: yellow;
+   border-left-color: grey;
+   border-right-color: grey;
+   border-bottom-color: grey;
+   position: relative;
+   z-index: 1;
+   animation:1s spinner1 infinite linear;
+}
+
+
+.spinners div:nth-of-type(2) div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-top-color: yellow;
+    border-left-color: yellow;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-width: 1px;
+    position: relative;
+    z-index: 1;
+    animation:1s spinner1 infinite linear;
+ }
+
+ @keyframes spinner1{
+    from{
+       transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+ .spinners div:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+ }
+ .spinners div:nth-of-type(3) .circle{
+    background-color: grey;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+ animation-name: circle;
+ animation-timing-function: linear;
+ animation-iteration-count: 2;
+ animation-duration:1s;
+ animation-delay: 2s;
+ }
+
+ .spinners div:nth-of-type(3) .circle:nth-of-type(2){
+ animation-delay: 1.5s;
+ animation-duration: 1.5s;
+}
+ .spinners div:nth-of-type(3) .circle:nth-of-type(3){
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+ 
+
+
+
+@keyframes circle {
+    0%{
+        /* background-color: grey; */
+        background-color: yellow;
+    }
+    /* 50%{
+    } */
+    100%{
+        background-color: grey;
+    }
+}
