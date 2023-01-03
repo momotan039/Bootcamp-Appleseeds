@@ -11,7 +11,7 @@
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 a.btn {
@@ -36,6 +36,9 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    transition: all .3s;
+    background-color: #333;
+    opacity: 0.8;
 }
 
 header .logo {
@@ -114,9 +117,7 @@ header ul.menu a li {
     display: flex;
     justify-content: center;
 }
-.about-section .box{
 
-}
 .about-section .box {
     display: flex;
     flex-direction: column;
@@ -152,11 +153,11 @@ header ul.menu a li {
 .solution-sction .image{
     background: url(image_resources/home/people.jpg)  no-repeat;
     background-size: cover;
-    height: 100%;
-    flex: 1;
+    width: 50%;
+    height: 500px;
 }
 .solution-sction .text{
-    flex: 1;
+    width: 50%;
     background-color: var(--main-color);
     color: white;
     padding: 20px;
@@ -204,14 +205,13 @@ margin-bottom: 20px;
     justify-content: center;
 }
 .cases-section .images img{
-    max-width: 24%;
+    width: 24%;
 }
 /* End Cases Section */
 
 
 /* Start Blog section */
 .blog-sction{
-    height: 400px;
     display: flex;
     flex-direction: row-reverse;
     padding-top: 40px;
@@ -219,17 +219,17 @@ margin-bottom: 20px;
 .blog-sction .image{
     background: url(image_resources/home/blog.jpg) no-repeat;
     background-size: cover;
-    height: 100%;
-    flex: 1;
+    height: 400px;
+    width: 50%;
 }
 .blog-sction .text{
-    flex: 1;
     background-color: #0284d0;
     color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
 }
 .blog-sction .text .sub-title{
 margin-bottom: 20px;
@@ -267,14 +267,154 @@ margin-bottom: 20px;
     font-size: 40px;
     margin-bottom: 30px;
 }
+.team-section p{
+    padding: 20px;
+    text-align: center;
+}
 .team-section .images{
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
-    gap: 5px;
+    gap: 20px;
     justify-content: center;
 }
-.team-section .images img{
-    max-width: 24%;
+.team-section .images div{
+    width: 28%;
+}
+.team-section .images div img{
+    width: 100%;
+    border-radius: 50%;
+}
+.team-section .images div .sub-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+.team-section .images div{
+    text-align: center;
+}
+.team-section .images div span{
+    display: block;
 }
 /* End Team Section */
+
+/* Start Requests section */
+.request-section{
+    display: flex;
+}
+.request-section .img{
+width: 50%;
+background-image: url(image_resources/home/contact.jpg);
+background-size: cover;
+height: 500px;
+}
+.request-section .text {
+padding: 20px;
+width: 50%;
+background-color: #f4f4f4;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.request-section .text span{
+    margin-bottom: 27px;
+    display: block;
+    font-size: 40px;
+}
+.request-section .text input{
+    display: block;
+    width: 100%;
+    padding: 10px 2px;
+    margin-bottom: 20px;
+    border: 1px #f4f4f4 solid;
+}
+.request-section .text input:focus-visible{
+    outline: none !important;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+.request-section .text .btn{
+    display: block;
+    width: 100%;
+}
+/* End Requests section */
+
+/* Start Footer Style */
+footer{
+    background-color: #333;
+    color: white;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer .icons {
+    text-align: center;
+    margin-bottom: 10px;
+}
+footer .icons a{
+    color: white;
+    margin-right: 20px;
+}
+/* End Footer Style */
+
+
+@media (max-width:768px) {
+    header{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .about-section{
+        flex-direction: column;
+        height: auto;
+    }
+    .about-section .box{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .about-section .box p{
+        width: 100%;
+    }
+
+    .solution-sction{
+        flex-direction: column;
+        height: auto;
+    }
+    .solution-sction> *{
+        width: 100% !important;
+    }
+
+    .cases-section .images{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .cases-section .images img{
+        width: 100%;
+    }
+
+    .blog-sction{
+        flex-direction: column;
+    }
+    .blog-sction>*{
+        width: 100% !important;
+    }
+
+
+    .team-section .images{
+        flex-direction: column;
+    }
+    .team-section .images div{
+        width: 100% !important; 
+    }
+    .team-section .images div img{
+        width: 70%;
+    }
+
+    .request-section{
+        flex-direction: column;
+    }
+    .request-section>*{
+        width: 100% !important;
+    }
+}
