@@ -5,10 +5,10 @@ align-items: center;
 flex-wrap: wrap;
 gap: 20px;
 height: 100vh;
+background-color: black;
 }
 
 .spinners div{
-background-color: black;
 width: 200px;
 height: 200px;
 display: flex;
@@ -62,39 +62,74 @@ align-items: center;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    position: relative;
  }
- .spinners div:nth-of-type(3) .circle{
+ .spinners div:nth-of-type(3) div{
     background-color: grey;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
- animation-name: circle;
- animation-timing-function: linear;
- animation-iteration-count: 2;
- animation-duration:1s;
- animation-delay: 2s;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+ }
+ .spinners div:nth-of-type(3) div.ball{
+    background-color: yellow;
+    animation: move 3s infinite;
+    position: absolute;
+    top: 42.5%;
+    left:22.5%;
+    z-index: 1;
+    visibility: hidden;
  }
 
- .spinners div:nth-of-type(3) .circle:nth-of-type(2){
- animation-delay: 1.5s;
- animation-duration: 1.5s;
+
+@keyframes move {
+   0%{
+    visibility: visible;
+    left: 22.5%;
+   }
+   50%{
+    visibility: visible;
+    left: 44%;
+   }
+   75%{
+    visibility: visible;
+    left: 64.5%;
+   }
 }
- .spinners div:nth-of-type(3) .circle:nth-of-type(3){
-    animation-delay: 2s;
-    animation-duration: 2s;
-}
+
+
+.spinners div:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+ }
+ .spinners div:nth-of-type(4) div{
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    scale: 0;
+    animation-name: scale;
+    animation-duration: 0.8s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+ }
  
 
+ .spinners div:nth-of-type(4) div:nth-of-type(2){
+    animation-duration: 0.8s;
+    animation-delay:1s;
+ }
 
-
-@keyframes circle {
-    0%{
-        /* background-color: grey; */
-        background-color: yellow;
+ .spinners div:nth-of-type(4) div:nth-of-type(3){
+    animation-duration:0.8s;
+    animation-delay: 1.5s;
+ }
+ @keyframes scale {
+    to{
+        scale: 1;
     }
-    /* 50%{
-    } */
-    100%{
-        background-color: grey;
-    }
-}
+   
+ }
