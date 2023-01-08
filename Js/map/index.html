@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+let obj={};
+console.time("timer")
+for(let i=0;i<1000000;i++){
+obj["prop"+i]="value"
+}
+console.timeEnd("timer")
+
+ let map=new Map();
+console.time("timer2")
+for(let i=0;i<1000000;i++){
+map.set("prop"+i,"value");
+}
+console.timeEnd("timer2")
+console.warn("map faster to add")
+
+console.warn("-".repeat(10))
+// 2
+console.time("timer")
+console.log(obj['prop1'])
+console.timeEnd("timer")
+
+console.time("timer2")
+console.log(map.get('prop1'))
+console.timeEnd("timer2")
+
+console.warn("map faster to get")
+
+console.warn("-".repeat(10))
+//3 check deleting
+console.time("timer")
+delete obj.prop1
+console.timeEnd("timer")
+
+console.time("timer2")
+map.delete('prop1')
+console.timeEnd("timer2")
+
+console.warn("obj faster to delete")
+
+
+</script>
+</html>
