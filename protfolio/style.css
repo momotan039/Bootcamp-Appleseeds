@@ -73,15 +73,27 @@ header nav ul a li::after {
 }
 
 body section {
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.343);
     margin-bottom: 20px !important;
+    position: relative;
+}
+
+body section h1.title{
+ font-size: 4rem;   
+ text-align: center;
+ text-transform: uppercase;
+ z-index: 1;
+ position: relative;
+}
+
+body section svg{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .home-section {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(5, 20%);
     padding-top: 150px;
 }
 
@@ -89,31 +101,38 @@ body section {
     text-align: center;
     grid-column: 1/3;
     grid-row: 1/3;
-    font-size: 4rem;
+}
+.home-section svg{
+    top: 10%;
+}
+.home-section .parent {
+    display: flex;
+    height: calc(100vh - 222px);
+    justify-content: center;
+    align-items: center;
 }
 
-.home-section .right {
+.home-section .parent .right {
     padding: 20px;
-    grid-column: 2/3;
 }
 
-.home-section .right p {
+.home-section .parent .right p {
     font-weight: bold;
     margin-bottom: 20px;
     max-width: 535px;
 }
 
-.home-section .right {
+
+
+.home-section .parent .left {
+    width: 50%;
+    height: 100%;
 }
 
-.home-section .left {
-    grid-column: 1/2;
-}
-
-.home-section .left .image {
+.home-section .parent .left .image {
     background-image: url(images/me.jpg);
-    width: 47%;
-    height: 300px;
+    width: 70%;
+    height: 500px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -126,7 +145,8 @@ body section {
 }
 
 .portfolio-section {
-    padding-top: 150px;
+    padding-top: 55px;
+    
 }
 
 .portfolio-section h1 {
@@ -140,6 +160,7 @@ body section {
     flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
+    margin-top: 7%;
 }
 
 .portfolio-section .projects .project {
