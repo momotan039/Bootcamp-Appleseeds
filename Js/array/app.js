@@ -21,8 +21,12 @@ copy=people.slice(2)
 
 //8
 console.log(people.indexOf("Mary"));
+//9
 console.log(people.indexOf("ds"));
-
+//10
 people = ["Greg", "Mary", "Devon", "James"];
-
-people=people.splice()
+people.splice(2,1,"Elizabeth","Artie")
+console.log(people)
+//11
+const withBob=people.concat("Bob")
+console.log(withBob)
