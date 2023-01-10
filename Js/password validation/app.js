@@ -2,15 +2,15 @@ function isValidPassword(
     password
 ) {
     if (password.length < 7)
-        console.log("Weak")
+        return "Weak"
     else
-        console.log("Strong")
+    return "Strong"
 }
 
 function isValidPassword2(
     password
 ) {
-    password.length < 7 ? console.log("Weak") : console.log("Strong")
+    return password.length < 7 ? "Weak" : "Strong"
 }
 
 function isValidPassword4(
@@ -20,13 +20,8 @@ function isValidPassword4(
 if(len<7)
 return "Weak"
 
-if(len>7)
-for (const i in password) {
-    const char=password.charAt(i)
-   if(char==char.toUpperCase())
-   return "ver Strong"
-}
+if(len>7 && password.toLowerCase()!=password)
+return "very Strong"
 
 return "Strong"
 }
-isValidPassword4("adsgewgabfd")
