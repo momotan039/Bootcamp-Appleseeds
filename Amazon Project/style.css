@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: black;
-}
 
 /* Start Header Style */
 
@@ -212,7 +209,7 @@ max-width: 800px;
 .sponsored .price{
 display: flex;
 }
-.sponsored .price .item{
+.sponsored .price .prime{
     width: 50px;
 }
 .sponsored .coupon{
@@ -234,3 +231,78 @@ position: relative;
 }
 
 /*End Sponsored Style*/
+
+/* Start Contianer Style */
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+/* End Contianer Style */
+
+/* Start detials product */
+
+.product-detials .breadcrumb-navigation{
+    display: flex;
+    color: #232f3e;
+    margin-bottom: 30px;
+}
+.product-detials .breadcrumb-navigation a{
+    color: #232f3e;
+    text-decoration: none;
+    font-size: 13px;
+}
+.product-detials .breadcrumb-navigation a:hover{
+    text-decoration: underline;
+}
+.product-detials .breadcrumb-navigation span{
+    margin: 0 5px;
+    font-size: 10px;
+    padding-top: 2px;
+}
+.product-detials .detials{
+    display: flex;
+    gap: 30px;
+    height: 300vh;
+    position: relative;
+}
+
+.product-detials .detials .left .sticky{
+position: sticky;
+display: flex;
+top: 0;
+left: 0;
+}
+.product-detials .detials .left .sticky .picture{
+    position: relative;
+}
+.product-detials .detials .left .sticky .picture::after{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background: url(https://m.media-amazon.com/images/G/01/share-icons/share-std.svg) no-repeat 3px 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: 0px 0px 3px;
+    border-radius: 50%;
+}
+.product-detials .detials .left .sticky .picture img{
+  height: 350px;
+  width: 350px;
+}
+
+.product-detials .detials .left .sticky .picture .hint{
+    text-align: center;
+    color: #232f3e;
+}
+.product-detials .detials .left .sticky .pictures{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.product-detials .detials .left .sticky .pictures img{
+    border:solid 1px;
+}
+
+
+/* End detials product */
