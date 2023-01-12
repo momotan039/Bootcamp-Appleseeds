@@ -1,0 +1,236 @@
+/* normalization */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+}
+
+/* Start Header Style */
+
+header .top {
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    padding: 0 8px;
+    gap: 5px;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;    
+    background-color: #232f3e;
+    padding: 10px;
+}
+header nav a:nth-of-type(1){
+    font-weight: bold;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 11px;
+    border: 1px solid transparent;
+}
+
+header a:hover {
+    border-color: white;
+}
+
+header span {
+    font-weight: bold;
+    display: block;
+}
+
+header span.arrow {
+    border: 4px solid grey;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    margin: 7px 0 0 4px;
+    display: inline-block;
+}
+
+header .logo {
+    background-image: url(https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405937547_.png);
+    background-position-x: -7px;
+    background-position-y: -50px;
+    height: 37px;
+    width: 105px;
+}
+
+header .search {
+    flex-grow: 1;
+}
+
+header .deliver-to {
+    width: 70px;
+}
+
+header .deliver-to span {
+    display: block;
+}
+
+header .deliver-to span:nth-child(1) {
+    text-align: end;
+    color: #ccc;
+    font-size: 13px;
+}
+
+header .deliver-to span:nth-child(2) {
+    font-weight: bold;
+}
+
+header .search {
+    height: 40px;
+    border-radius: 8px;
+    position: relative;
+}
+
+header .search input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding-left: 50px;
+}
+
+header .search input:focus-visible {
+    outline-color: #f3a847;
+}
+
+header .search .icon {
+    position: absolute;
+    right: -4px;
+    top: 0px;
+    height: 100%;
+    width: 44px;
+    content: '';
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #febd69;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+header .search .icon:hover {
+    background-color: #f3a847 !important;
+}
+
+header .search .search-by {
+    position: absolute;
+    left: -4px;
+    top: 0px;
+    height: 98%;
+    width: 44px;
+    content: '';
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(232, 232, 232);
+    cursor: pointer;
+    border-radius: 5px 0px 0px 5px;
+    border-right: solid 1px #ccc;
+}
+
+header .search .search-by:hover {
+    background-color: #ccc !important;
+
+}
+
+header .languages span {
+    display: inline-block;
+}
+
+header .languages .flag {
+    width: 34px;
+    height: 19px;
+    background-image: url(https://m.media-amazon.com/images/S/sash/fe2UeLQmJ11kKHN.png);
+    background-position: 9px 167px;
+    vertical-align: bottom;
+    scale: .9;
+}
+
+header .languages .arrow {
+    vertical-align: bottom;
+}
+header .cart{
+    position: relative;
+}
+header .cart span {
+    display: inline-block;
+}
+
+header .cart .icon {
+    width: 39px;
+    height: 29px;
+    background-image: url(https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405937547_.png);
+    background-position: -9px 112px;
+    vertical-align: bottom;
+}
+header .cart .orders{
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 18px;
+    color: #f08804;
+    font-weight: bold;
+    font-size: 19px;
+}
+/* End Header Style */
+
+/*Start Sponsored Style*/
+.sponsored{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 30px;
+    border: solid #ccc;
+}
+.sponsored img.item{
+    width: 50px;
+    height: 60px;
+}
+.sponsored .describe{
+max-width: 800px;
+}
+.sponsored .starts{
+    display: flex;
+    font-weight: bold;
+}
+.sponsored .starts img{
+    width: 15px;
+    height: 15px;
+}
+.sponsored .price{
+display: flex;
+}
+.sponsored .price .item{
+    width: 50px;
+}
+.sponsored .coupon{
+background-color: #f08804;
+color: white;
+padding: 8px;
+border-radius: 8px;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+position: relative;
+}
+.sponsored .coupon .skew{
+    background-color: #f08804;
+    height: 100%;
+    width:20px;
+    top: 0;
+    position: absolute;
+    transform: skewX(-10deg);
+}
+
+/*End Sponsored Style*/
