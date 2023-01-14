@@ -269,14 +269,16 @@ position: relative;
 .product-detials .detials > div{
     flex: 2;
 }
- a{
+
+section a{
     color: #007185;
     text-decoration: none;
 }
- a:hover{
+section a:hover{
     text-decoration: underline;
     color: #f08804;
 }
+
 .product-detials .detials .left .sticky{
 position: sticky;
 display: flex;
@@ -537,17 +539,17 @@ background-color: #F7CA00;
     /* End Buy it with */
 
     /* Start related-product */
-    .carousel .products{
+    .carousel .items{
         display: flex;
         gap: 10px;
         padding: 0 30px;
         position: relative;
     }
-    .carousel .products .image{
+    .carousel .items .image{
         width: 100%;
         height: 190px;
     }
-    .carousel .products .product{
+    .carousel .items .product{
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -626,3 +628,38 @@ background-color: #F7CA00;
         margin-bottom: 20px;
     }
     /* End product description */
+
+    /* Start videos section */
+    .videos .content{
+        padding: 20px 30px;
+        position: relative;
+    }
+    .videos .content h3{
+        padding:0 24px;
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+    .videos .content .carousel .items .video{
+        display: flex;
+        flex-direction: column;
+        height: 258px;
+        width: 326px;
+        background: linear-gradient(black,red,black);
+        border-radius: 10px;
+    }
+    .videos .content .carousel .items .video video{
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+    }
+    .videos .content .carousel .items .video .text{
+        color: white;
+        padding: 10px;
+    }
+    .videos .content .carousel .items .video .text h4{
+        padding: 0;
+    } 
+    .videos .content .carousel .items .video .text span{
+        margin-top: 5px;
+        display: block
+    }
+    /* End videos section */
