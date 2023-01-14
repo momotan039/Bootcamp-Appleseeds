@@ -497,6 +497,7 @@ background-color: #F7CA00;
     section h3.title{
         color: #CC6600;
         font-size: 20px;
+        margin: 20px 0;
     }
     /* Start Buy it with */
     .buy-it-with .title{
@@ -546,7 +547,12 @@ background-color: #F7CA00;
         width: 100%;
         height: 190px;
     }
-    .related-products .prime{
+    .carousel .products .product{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    section .prime{
         width: 30px;
     }
     .related-products .save{
@@ -575,10 +581,48 @@ background-color: #F7CA00;
 
     /* Start Customers serach */
     .search-customers .product{
-      box-shadow: 0 0 3px;
-    text-align: center;
-    }
-    .search-customers .product a{
-    border-top: 1px solid;
+        box-shadow: 0px 4px 3px 0px grey;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        background-color: #ccc;
     }
     /* End Customers serach */
+
+    /* Start Product info */
+    .info-product .flex{
+        display: flex;
+        gap: 30px;
+    }
+    .info-product table{
+        border-collapse: collapse;
+    }
+    .info-product table td{
+        border: 1px solid #E7E7E7;
+        border-right: 0;
+    }
+    .info-product table tr td{
+        padding: 13px;
+        font-size: 13px;
+    }
+    .info-product table tr td:first-of-type{
+        background-color: #F3F3F3;
+    }
+    .info-product table tr td .rating .num{
+        margin-left: 20px;
+    }
+    .info-product .warranty  .sup-title{
+        font-size: 22px;
+    }
+    .info-product .warranty  .sup-title:nth-of-type(2){
+    display: block;
+    margin: 20px 0;
+    }
+    /* End Product info */
+
+    /* Start product description */
+    .product-description p{
+        padding: 0 30px;
+        margin-bottom: 20px;
+    }
+    /* End product description */
