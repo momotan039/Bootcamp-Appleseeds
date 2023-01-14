@@ -238,6 +238,7 @@ position: relative;
 .container{
     max-width: 1400px;
     margin: auto;
+    padding: 10px;
 }
 /* End Contianer Style */
 
@@ -486,13 +487,16 @@ background-color: #F7CA00;
     gap: 5px;
 }
 
-.product-detials .detials .right .sell-on-amazon button{
+ button{
     padding: 10px;
     border: 0;
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 0 3px;
     cursor: pointer;
+}
+button:hover{
+    background-color: #F7FAFA;
 }
     /* End detials product */
 
@@ -587,7 +591,9 @@ background-color: #F7CA00;
         text-align: center;
         display: flex;
         flex-direction: column;
-        background-color: #ccc;
+    }
+    .search-customers .product a:nth-of-type(2){
+        border-top: 2px solid #f9f9f9;
     }
     /* End Customers serach */
 
@@ -642,15 +648,37 @@ background-color: #F7CA00;
     .videos .content .carousel .items .video{
         display: flex;
         flex-direction: column;
-        height: 258px;
         width: 326px;
         background: linear-gradient(black,red,black);
         border-radius: 10px;
+        position: relative;
     }
+    .videos .content .carousel .items .video  .play-icon{
+        z-index: 1;
+        color: white;
+        font-size: 52px;
+        top: 37%;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+    }
+    .videos .content .carousel .items .video  .time{
+        z-index: 1;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        top: 55%;
+        width: 100%;
+        text-align: end;
+        padding: 0 10px;
+        position: absolute;
+    }
+    
     .videos .content .carousel .items .video video{
         border-radius: 10px 10px 0 0;
         width: 100%;
     }
+  
     .videos .content .carousel .items .video .text{
         color: white;
         padding: 10px;
@@ -661,5 +689,8 @@ background-color: #F7CA00;
     .videos .content .carousel .items .video .text span{
         margin-top: 5px;
         display: block
+    }
+    .videos button{
+        margin: 23px 0;
     }
     /* End videos section */
