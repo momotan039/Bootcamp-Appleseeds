@@ -9,6 +9,7 @@
 hr{
     margin: 10px ;
 }
+
 /* Start Header Style */
 
 header .top {
@@ -311,7 +312,9 @@ section a:hover{
     text-decoration: underline;
     color: #f08804;
 }
-
+.product-detials .detials .left{
+    position: relative;
+}
 .product-detials .detials .left .sticky{
 position: sticky;
 display: flex;
@@ -333,8 +336,8 @@ left: 0;
     border-radius: 50%;
 }
 .product-detials .detials .left .sticky .picture img{
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
 }
 
 .product-detials .detials .left .sticky .picture .hint{
@@ -347,10 +350,26 @@ left: 0;
     gap: 10px;
 }
 .product-detials .detials .left .sticky .pictures img{
-    border:solid 1px;
+    border: solid 1px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
 }
-.product-detials .detials .center{
+.product-detials .detials .left .sticky .pictures img:hover{
+    border-color: #f08804;
+    box-shadow: 0 0 4px #f08804;
+}
 
+.product-detials .detials .scale-image{
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 80%;
+    right: 0;
+    display: none;
+    top: 0px;
+    z-index: 999;
+    background-image: url(https://m.media-amazon.com/images/I/51WgxanZvDL._AC_Sy550_.jpg);    
 }
 .product-detials .detials .center .brand{
     text-decoration: none;
