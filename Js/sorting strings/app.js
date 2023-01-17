@@ -1,29 +1,34 @@
-const numbers = [1, -5, 666, 2, 400, 11];
+const foods = ["falafel", "sabich", "hummus",
+    "pizza with extra pineapple"
+];
+
+foods.sort((a, b) => {
+    return a.toLowerCase() > b.toLowerCase() ? 1 : -1
+})
+console.log(foods)
+
+foods.sort((a, b) => {
+    return a.toLowerCase() < b.toLowerCase() ? 1 : -1
+})
+console.log(foods)
 
 
+///b
 
-for (let i = 0; i < numbers.length; i++) {
-    for (let j = 0; j < numbers.length; j++) {
-        debugger
-        if(numbers[i]>numbers[j]){
-            const temp=numbers[i]
-            numbers[i]=numbers[j]
-            numbers[j]=temp
-        }
-    }
-}
+const foodsWithUpperCase = [
+    "falafel",
+    "Sabich",
+    "hummus",
+    "pizza with extra pineapple",
+];
 
-console.log(numbers)
+foodsWithUpperCase.sort((a,b)=>{
+    return a.toUpperCase()<b.toUpperCase()?1:-1
+})
+console.log(foodsWithUpperCase)
 
-for (let i = 0; i < numbers.length; i++) {
-    for (let j = 0; j < numbers.length; j++) {
-        if(numbers[i]<numbers[j]){
-            const temp=numbers[i]
-            numbers[i]=numbers[j]
-            numbers[j]=temp
-        }
-    }
-}
+foodsWithUpperCase.sort((a,b)=>{
+    return a.toUpperCase()>b.toUpperCase()?1:-1
+})
 
-console.log(numbers)
-
+console.log(foodsWithUpperCase)
