@@ -11,6 +11,5 @@ function ex2_1(arr){
 }
 console.log(ex2_1([1,2,3,4]));
 
-function ex2_2(){
-    
-}
+ex2_2=(arr)=>parseInt(arr.join(''),2) 
+
