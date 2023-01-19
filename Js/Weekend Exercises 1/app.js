@@ -13,3 +13,9 @@ console.log(ex2_1([1,2,3,4]));
 
 ex2_2=(arr)=>parseInt(arr.join(''),2) 
 
+function findNextSquare(perfect){
+    const num=Math.sqrt(perfect)
+    if(!Number.isInteger(num))
+    return -1
+    return Math.pow(num+1,2)
+}
