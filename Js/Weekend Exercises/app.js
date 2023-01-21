@@ -200,7 +200,7 @@ function getShortWordLength(str) {
 }
 
 function getLongestWord(str) {
-    
+
     return str.split(' ').reduce((p, c) => {
         const len1 = p.length
         const len2 = c.length
@@ -209,6 +209,7 @@ function getLongestWord(str) {
 }
 
 // ---------------Finish 5 Excercis---------------
+
 
 function accum(str) {
     return str.split('').map((c, i) => {
