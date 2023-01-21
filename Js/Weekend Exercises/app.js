@@ -96,7 +96,9 @@ function fibonacci_seq(n,offset) {
        current=1
     }
     return res
+    
 }
+
 
 function tribonacci_seq(n,offset) {
     //0 0 1 1 2
