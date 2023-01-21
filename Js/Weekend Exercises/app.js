@@ -168,7 +168,6 @@ toWeirdCase = (str) => {
 }
 
 getAbbreviatedWords = (str) => {
-
     return str.split(' ').map(word => {
         return word[0].toUpperCase()
     }).join('.')
