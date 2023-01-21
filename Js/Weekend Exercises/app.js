@@ -246,6 +246,7 @@ function helperFunction(str) {
     return Object.keys(letters)
 }
 
+
 function orgnizeStrings(a,b){
 const combine=helperFunction(a+b)
 return combine.sort().join('');
