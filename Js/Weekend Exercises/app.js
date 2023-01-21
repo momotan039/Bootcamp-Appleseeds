@@ -178,6 +178,7 @@ function maskify(str) {
     //0123456
     //7654321
     //*******/
+    
     let res = ""
     for (let i = 0; i < str.length; i++) {
         if (str.length - i > 4)
