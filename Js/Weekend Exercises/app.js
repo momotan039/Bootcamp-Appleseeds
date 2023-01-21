@@ -217,6 +217,7 @@ function accum(str) {
     }).join('-')
 }
 
+
 function countingDuplicates(str) {
     const letters = {}
     str.split('').forEach(c => {
