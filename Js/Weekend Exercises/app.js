@@ -178,7 +178,7 @@ function maskify(str) {
     //0123456
     //7654321
     //*******/
-    
+
     let res = ""
     for (let i = 0; i < str.length; i++) {
         if (str.length - i > 4)
@@ -191,6 +191,7 @@ function maskify(str) {
 }
 
 function getShortWordLength(str) {
+    
     return str.split(' ').reduce((p, c) => {
         const len1 = p.length
         const len2 = c.length
