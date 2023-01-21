@@ -120,6 +120,7 @@ function tribonacci_seq(n,offset) {
     return res
 }
 
+
 // ---------------Finish 4 Excercis---------------
 
 function trimmingString(str) {
