@@ -234,6 +234,7 @@ function countingDuplicates(str) {
     return result == '' ? 'no characters repeats more than once' : result
 }
 
+
 function helperFunction(str) {
     const letters = {}
     str.split('').forEach(c => {
