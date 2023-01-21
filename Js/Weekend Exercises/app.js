@@ -78,6 +78,7 @@ function nb_year(p0, percent, aug, p) {
     }
     return years;
 }
+
 // ---------------Finish 3 Excercis---------------
 
 function fibonacci_seq(n,offset) {
