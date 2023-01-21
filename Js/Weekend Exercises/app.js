@@ -96,11 +96,12 @@ function fibonacci_seq(n,offset) {
        current=1
     }
     return res
-    
+
 }
 
 
 function tribonacci_seq(n,offset) {
+
     //0 0 1 1 2
     let prev = 0; //
     let pre_prev = 0; //
@@ -113,7 +114,6 @@ function tribonacci_seq(n,offset) {
        pre_prev=prev
        prev=current
        current=current+temp+temp2
-
        if(i==1)
        current=1
     }
