@@ -267,6 +267,7 @@ function isIsoGram(str) {
 
 // ---------------Finish 6 Excercis---------------
 
+
 findPerimeter=(len,width)=>{
     return (len+width)*2
 }
