@@ -155,6 +155,7 @@ toCamelCase = (str) => {
     return arr.join('')
 }
 
+
 toWeirdCase = (str) => {
     return str.split(' ').map(word => {
         return word.split('').map((c, i) => {
