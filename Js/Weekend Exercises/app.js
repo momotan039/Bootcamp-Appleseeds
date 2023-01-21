@@ -191,7 +191,7 @@ function maskify(str) {
 }
 
 function getShortWordLength(str) {
-    
+
     return str.split(' ').reduce((p, c) => {
         const len1 = p.length
         const len2 = c.length
@@ -200,6 +200,7 @@ function getShortWordLength(str) {
 }
 
 function getLongestWord(str) {
+    
     return str.split(' ').reduce((p, c) => {
         const len1 = p.length
         const len2 = c.length
