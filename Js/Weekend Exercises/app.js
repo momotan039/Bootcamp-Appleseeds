@@ -127,6 +127,7 @@ function trimmingString(str) {
     return str.slice(1, str.length - 1)
 }
 
+
 function repeat_str(num, str) {
     return str.repeat(num)
 }
