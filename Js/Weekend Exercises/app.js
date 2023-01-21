@@ -64,6 +64,7 @@ function basicOp(opt, val1, val2) {
     if (opt === '/')
         return val1 / val2
 }
+
 // ---------------Finish 2 Excercis---------------
 
 function nb_year(p0, percent, aug, p) {
