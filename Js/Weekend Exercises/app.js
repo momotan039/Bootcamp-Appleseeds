@@ -252,6 +252,7 @@ const combine=helperFunction(a+b)
 return combine.sort().join('');
 }
 
+
 function isIsoGram(str) {
     //check only letters
     if (!str.match(/^[a-zA-Z]+$/)) {
