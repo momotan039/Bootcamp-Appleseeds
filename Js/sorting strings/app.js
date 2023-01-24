@@ -31,4 +31,6 @@ foodsWithUpperCase.sort((a,b)=>{
     return a.toUpperCase()>b.toUpperCase()?1:-1
 })
 
+
+
 console.log(foodsWithUpperCase)

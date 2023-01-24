@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge" />
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<h1 name="ff">Header</h1>
+<p>Paragraph</p>
+<a href="#">link</a>
+<img src="" alt="" />
+<div class="x">Div with a class<h1>hello</h1></div>
+<div id="y">Div with an id</div>
+<input type="text" />
+<input type="text" />
+<input type="text" />
+</body>
+<script>
+    const h1_elems=document.getElementsByTagName("h1")
+    console.log(h1_elems);
+    const p_eles=document.getElementsByTagName("p")
+    console.log(p_eles);
+    const a_eles=document.getElementsByTagName("a")
+    console.log(a_eles);
+    const imgs=document.getElementsByTagName("img")
+    console.log(imgs);
+    const divs=document.getElementsByTagName("div")
+    console.log(divs);
+    const inputs=document.getElementsByTagName("input")
+    console.log(inputs);
+
+    const elms=document.querySelectorAll("body *")
+    console.log(elms);
+
+    document.querySelectorAll("input").forEach(input=>{
+        console.log(input);
+    })
+console.log("-".repeat(6));
+    const inputs2=document.getElementsByTagName("input")
+    for (const input of inputs2) {
+        console.log(input);
+    }
+</script>
+</html>

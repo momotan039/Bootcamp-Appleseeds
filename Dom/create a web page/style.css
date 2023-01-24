@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+
+body,html{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    height: 100%;
+}
+
+.center{
+width: 100%;
+background-color: white;
+text-align: center;
+padding: 50px 0;
+}
+
+.center .goal{
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.center .goal .letters {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.center .goal span{
+    transition: all .3s;
+}
+.center .goal span.wrong{
+    color: red;
+    text-decoration: underline;
+}
+.center .goal span.pass{
+    color: #ffc107;
+    font-size: 34px;
+}
+.center .word{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+}
+
+.center .word .char{
+    color: white;
+    padding: 10px 20px;
+    background: #f19814;
+    border-radius: 20px;
+    font-size: 47px;
+    width: 70px;
+}
+
+.container button{
+    color: red;
+    padding: 20px 40px;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.container button:hover{
+    background-color: red;
+    color: white;
+}
+
+.container button.pass:hover{
+    background-color: #ffeb3b;
+    color: black;
+}

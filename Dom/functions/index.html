@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>title 1</li>
+        <li class="start-here">title 2</li>
+        <li>
+            <ul>
+                <li>sub title 1</li>
+                <li>sub title 2</li>
+                <li>sub title 3</li>
+            </ul>
+        </li>
+        <li>title 3</li>
+    </ul>
+    <div>
+        <p>Hello World!</p>
+    </div>
+</body>
+<script >
+    const li_elm = document.querySelector("li.start-here")
+    li_elm.innerHTML = "main title"
+    const ul_parent = document.querySelector("ul")
+    const child_li = document.createElement('li')
+    child_li.innerText = "subtitle4"
+    ul_parent.querySelector("ul").appendChild(child_li)
+    const lis=ul_parent.getElementsByTagName('li')
+    lis[lis.length-1].remove()
+   document.querySelector("title").innerHTML="Master of Dom"
+    document.querySelector("p").innerHTML="Changed"
+    // setTimeout(()=>{
+    //     debugger
+    //     ul_parent.removeChild(ul_parent.lastChild)
+    // },1000)
+</script>
+
+</html>

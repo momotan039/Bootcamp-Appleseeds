@@ -1,0 +1,52 @@
+body{
+    font-family: monospace;
+}
+body *{
+    letter-spacing: 2px;
+}
+.center{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.container{
+    text-align: center;
+}
+.container h1{
+padding: 0;
+margin: 0;
+}
+.container h3{
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+.container  .verify{
+    background-color: rgb(255, 252, 252);
+    padding: 20px;
+    border-radius: 20px;
+
+}
+.container .inputs{
+    gap: 5px;
+    display: flex;
+}
+.container .inputs input{
+    width: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.container .verify button{
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
