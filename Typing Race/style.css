@@ -34,7 +34,51 @@ background-color: white;
 text-align: center;
 padding: 50px 0;
 }
-
+.center .words{
+    position: relative;
+    display: flex;
+    gap: 53px;
+    justify-content: center;
+    align-items: center;
+}
+.center .words .line{
+    position: absolute;
+    background-color: grey;
+    height: 5px;
+    border-radius: 22px;
+    width: 100%;
+}
+.center .words span{
+    width: 90px;
+    height: 76px;
+    position: relative;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    transition: all .3s;
+}
+.center .words span.pass{
+    font-weight: bold;
+    scale: 1.1;
+}
+.center .words span::before{
+    position: absolute;
+    content: attr(data-num);
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    padding: 7px;
+    height: 28px;
+    width: 28px;
+    background-color: grey;
+    border-radius: 50%;
+    top: 10px;
+    transition: all .3s;
+}
+.center .words span.pass::before{
+    background-color: #f19814;
+}
 .center .goal{
     font-size: 30px;
     margin-bottom: 20px;
@@ -89,7 +133,7 @@ padding: 50px 0;
     background-color: red;
     color: white;
 }
-
+.container button.pass,
 .container button.pass:hover{
     background-color: #ffeb3b;
     color: black;

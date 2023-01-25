@@ -1,20 +1,47 @@
-    const words = ["ashraf", 'Mohammed', 'Ali', 'Shibly', 'Rafat', 'Adel']
-    // const words = ["ad", 'fd']
+    const words = ['Hi', 'Hello', "ashraf", 'Mohammed', 'Ali', 'Shibly', 'Rafat', 'Adel']
+    const randomWords = shuffelWords(words)
     const goal = document.querySelector(".center .goal .letters")
     const word_elm = document.querySelector(".center .word")
+    const line_words = document.querySelector(".center .words")
     const button = document.querySelector("button")
-    const playedWord=[]//saved word that solved
+    const playedWord = [] //saved word that solved
     let empty_inputs = []
     let chars_elems = []
+    let current_index = 0
     // click button
     button.addEventListener("click", () => {
         if (!checkFinishWord())
             return
         word_elm.innerHTML = ""
         goal.innerHTML = ""
+        changeStyleWord()
         refreshWord()
         button.classList.remove('pass')
     })
+
+    function changeStyleWord() {
+        // pass to next word in line words
+        line_words.querySelectorAll('span').forEach(span => {
+            debugger
+            if (span.innerText === playedWord[playedWord.length - 1])
+                span.classList.add('pass')
+        })
+    }
+
+    function shuffelWords(words) {
+        let temp = []
+        while (true) {
+            const i = Math.floor(Math.random() * (words.length))
+            const random_word = words[i]
+
+            if (!temp.includes(random_word))
+                temp.push(random_word)
+
+            if (temp.length === words.length)
+                break
+        }
+        return temp
+    }
 
 
     function fillWord(word) {
@@ -52,21 +79,20 @@
                 input.disabled = true
 
             //  configuration pressing key and fill
+            input.addEventListener('input', () => {
+                checkChar(i)
+                setpOver(i)
+                checkFinishWord()
+            })
+
+            // configureation backspace key
             input.addEventListener('keyup', () => {
-
-                if (event.keyCode === 16)
-                    return
-
                 if (event.keyCode === 8) {
                     backStep(i)
+                    checkChar(i)
                     checkFinishWord()
                     return
                 }
-
-                checkChar(i)
-                setpOver(i)
-
-                checkFinishWord()
             })
 
         })
@@ -79,11 +105,10 @@
             if (chars_elems[i].innerHTML !== empty_inputs[i].value)
                 finish = false
         }
-        if (finish)
-            {
-                button.classList.add('pass')
-            }
-        else
+        if (finish) {
+            button.classList.add('pass')
+            button.focus()
+        } else
             button.classList.remove('pass')
         return finish
     }
@@ -118,23 +143,19 @@
 
 
     function refreshWord() {
-        if(playedWord.length==words.length)
-        {
+        debugger
+        if (playedWord.length == words.length) {
             showScorePanel()
+            button.blur()
             return
         }
-        let random_word;
-        do {
-            const i = Math.floor(Math.random() * (words.length))
-            random_word=words[i]
-        } while (playedWord.includes(random_word));
-
-        fillWord(random_word)
-        empty_inputs = createEmptyInputs(random_word)
+        const current_word = randomWords.shift()
+        fillWord(current_word)
+        empty_inputs = createEmptyInputs(current_word)
         empty_inputs[0].focus()
 
         // set this word to list word played
-        playedWord.push(random_word)
+        playedWord.push(current_word)
     }
 
     function showScorePanel() {
@@ -142,12 +163,13 @@
         const panel = document.createElement('div')
         const h1 = document.createElement('h1')
         const h3 = document.createElement('h3')
-        const close=document.createElement('div')
+        const close = document.createElement('div')
 
         h1.innerText = "Score:1000"
         h3.innerText = "Keep Going"
-        close.innerText="X"
-        close.addEventListener('click',()=>{
+        
+        close.innerText = "X"
+        close.addEventListener('click', () => {
             cr.classList.add('hide')
             location.reload()
         })
@@ -162,12 +184,23 @@
         panel.appendChild(close)
         document.body.appendChild(cr)
 
-        setTimeout(()=>{
+        setTimeout(() => {
             cr.classList.remove('hide')
-        },100)
+        }, 100)
     }
 
+    function createRoadMapWords() {
+        randomWords.forEach((word, i) => {
+            const span = document.createElement('span')
+            span.innerText = word
+            span.setAttribute('data-num', i + 1 + '')
+            line_words.appendChild(span)
+        })
+    }
+
+
     function runGame() {
+        createRoadMapWords()
         refreshWord()
     }
 
