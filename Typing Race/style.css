@@ -37,6 +37,7 @@ padding: 50px 0;
 .center .words{
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     gap: 53px;
     justify-content: center;
     align-items: center;
