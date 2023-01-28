@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section class="game-page">
         <main>
-            <div class="left">
+            <div class="left playing">
                 <div class="info">
                     <h1>Player 1</h1>
                     <span>Total:</span>
-                 <span class="score">0</span>
+                    <span class="score">0</span>
+                </div>
+                <div class="winning-times">
+                    <span>winning times</span>
+                    <br>
+                    <span class="num">0</span>
                 </div>
                 <div class="current">
                     <span>current</span>
                     <br>
-                    <span class="num">11</span>
+                    <span class="num">0</span>
                 </div>
             </div>
             <div class="center">
@@ -27,33 +34,110 @@
                     Trun : <span>Player 1</span>
                 </div>
                 <div class="dices">
-                    <div class="cube">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="dice dice-1 ">
+                                <div class="c1">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="c2">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="c3">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="dice dice-2 ">
+                                <div class="c1">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="c2">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="c3">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="buttons">
-                    <button   class="roll">Roll</button>
-                    <button class="hold">Hold</button>
+                    <button class="roll mybtn">Roll</button>
+                    <button class="hold mybtn">Hold</button>
                 </div>
-               </div>
+            </div>
             <div class="right">
-               <div class="info">
-                <h1>Player 2</h1>
-                <span>Total:</span>
-                <span class="score">0</span>
-               </div>
+                <div class="info">
+                    <h1>Player 2</h1>
+                    <span>Total:</span>
+                    <span class="score">0</span>
+                </div>
+
+                <div class="winning-times">
+                    <span>winning times</span>
+                    <br>
+                    <span class="num">0</span>
+                </div>
                 <div class="current">
                     <span>current</span>
                     <br>
-                    <span class="num">11</span>
+                    <span class="num">0</span>
                 </div>
             </div>
         </main>
-        
+
     </section>
+    <div class="shoked-popUp">
+        <h1 class="time"></h1>
+        <img src="images/shoked.gif">
+        <p>
+            <br>
+            Yes , You lost this round
+            <br>
+            The number <span>6</span> is present on both dice.
+        </p>
+    </div>
+    <div class="scoreboard-container ">
+        <div>
+            <h1>This Game</h1>
+            <ul>
+                <li><span>Player1:winner</span></li>
+                <li><span class="message">Player 2 exceed predefined score</span></li>
+            </ul>
+        </div>
+        <div class="scoreboard">
+            <h1>Scoreboard</h1>
+            <ul>
+                <li>
+                    <span>Player1 Winner:5 times</span>
+                </li>
+                <li>
+                    <span>Player2 Winner:8 times</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="buttons">
+            <button onclick="PlayAgain()" class="again mybtn">Play Again</button>
+            <button onclick="startNewGame()" class="new-game mybtn">Start New Game</button>
+        </div>
+    </div>
+
 </body>
 <script src="main.js"></script>
+
 </html>
