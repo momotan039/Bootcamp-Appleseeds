@@ -9,6 +9,7 @@
 
 body {
     overflow: hidden;
+    position: relative;
 }
 
 .game-page {
@@ -36,8 +37,27 @@ body {
     justify-content: space-around;
     background-color: #4d616159;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.game-page main>div:not(:nth-child(2))::after {
+    position: absolute;
+    content: '';
+    background-color: #3a0606;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 1s;
+    transform: scale(0);
 }
 
+.game-page main>div:not(:nth-child(2)).playing::after{
+    transform: scale(2);
+    opacity: 0.5;
+}
 
 .game-page main .center {
     flex: 2;
@@ -49,7 +69,11 @@ body {
 
 .game-page main .center .turn{
     font-size: 50px;
+    background-color: #1b2222;
+    padding: 10px;
+    border-radius: 13px;
 }
+
 .game-page main .center .dices {
     height: 100%;
     display: flex;
@@ -57,30 +81,131 @@ body {
     justify-content: space-evenly;
 }
 
-.game-page main .center .dices .cube{
+.game-page main .center .dices .container{
 width: 100%;
 height: 100%;
-background-color: red;
+display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 10px;
-transform-style: preserve-3d;
+gap: 50px;
 }
-.game-page main .center .dices .cube span{
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    display: block;
+.game-page main .center .dices .container .row{
+    display: flex;
+    width: 50%; 
 }
-.game-page main .center .dices .cube span:nth-child(1){
-    transform:rotate3d(180deg);
+.game-page main .center .dices .container .row:nth-of-type(2){
+    justify-content:flex-end;
 }
-.game-page main .center .turn {
-    background-color: #1b2222;
-    padding: 10px;
-    border-radius: 13px;
+.game-page main .center .dices .container .row .dice {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    transition: all .3s;
 }
-.game-page main .center .buttons button {
+
+
+.game-page main .center .dices .container .row .dice.dice-1.roll{
+    animation-name: rolling1;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.game-page main .center .dices .container .row .dice.dice-1.movement{
+    transform: translate(100%);
+}
+
+.game-page main .center .dices .container .row .dice.dice-2.roll{
+    animation-name: rolling2;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+.game-page main .center .dices .container .row .dice.dice-2.movement{
+    transform: translate(-100%);
+}
+
+
+@keyframes rolling1{
+    to{
+        transform:rotate(45deg);
+        transform: translate(100%);
+    }
+}
+@keyframes rolling2{
+    to{
+        transform:rotate(-45deg);
+        transform: translate(-100%);
+    }
+}
+
+.game-page main .center .dices .container .dice > div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-page main .center .dices .container .dice span{
+    width: 100%;
+    height: 20%;
+    background-color: #940b0b;
+    border-radius: 50%;
+}
+
+.game-page main .center .dices .container .dice div span {
+    visibility: hidden;
+}
+
+.game-page main .center .dices .container .dice.s1 .c2 span:nth-child(2)
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s2 .c1 span:nth-child(1),
+.game-page main .center .dices .container .dice.s2 .c3 span:nth-child(3)
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s3 .c1 span:nth-child(1),
+.game-page main .center .dices .container .dice.s3 .c2 span:nth-child(2),
+.game-page main .center .dices .container .dice.s3 .c3 span:nth-child(3)
+{
+    visibility: visible;
+}
+
+
+.game-page main .center .dices .container .dice.s4 .c1 span:not(:nth-child(2)),
+.game-page main .center .dices .container .dice.s4 .c3 span:not(:nth-child(2))
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s5 .c1 span:not(:nth-child(2)),
+.game-page main .center .dices .container .dice.s5 .c2 span:nth-child(2),
+.game-page main .center .dices .container .dice.s5 .c3 span:not(:nth-child(2))
+{
+    visibility: visible;
+}
+
+
+
+.game-page main .center .dices .container .dice.s6 .c1 span,
+.game-page main .center .dices .container .dice.s6 .c3 span{
+    visibility: visible;
+}
+
+
+
+button.mybtn {
     width: 100%;
     padding: 10px;
     cursor: pointer;
@@ -89,13 +214,109 @@ transform-style: preserve-3d;
     border-radius: 20px;
     margin-bottom: 10px;
     background: linear-gradient(90deg, #940b0b, #3a0606);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.game-page main .center .buttons button:hover{
-    background: linear-gradient(180deg, #940b0b, #3a0606);
+
+
+button.mybtn::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    right: 50%;
+    width: 5px;
+    height: 5px;
+    background: darkslategrey;
+    transform-origin: center;
+    border-radius: 50%;
+    transform: scale(0);
+}
+button.mybtn:hover::after{
+    transform: scale(200);
+    transition: all 0.5s ease;
+    opacity: 0;
 }
 
-.game-page main .center .buttons button.pressing{
-    box-shadow: 0px -1px 8px 5px inset darkslategrey;
+
+button.mybtn::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    right: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgb(139, 15, 15);
+    transform-origin: center;
+    border-radius: 50%;
+    transform: scale(0);
 }
 
+button.mybtn:active::before{
+    transform: scale(800);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+
+
+.scoreboard-container,
+.shoked-popUp{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    color: white;
+    background-color: rgb(0 0 0 / 92%);
+    font-size: 3rem;
+    transition: all .3s;
+    transform: translateY(-100%);
+}
+
+.scoreboard-container.show,
+.shoked-popUp.show{
+transform: none;
+}
+.shoked-popUp img{
+    width: 50%;
+}
+
+.shoked-popUp span{
+    color: #ff2436;
+    text-decoration: underline;
+}
+
+.scoreboard-container{
+font-size: 2rem;
+letter-spacing: 5px;
+background-color: rgb(0 0 0 / 50%);
+gap: 30px;
+}
+
+.scoreboard-container>div{
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+    border-radius: 10px;
+    max-width: 800px;
+    padding: 30px 20px;
+}
+
+.scoreboard-container>div ul{
+    padding: 10px 57px;
+}
+.scoreboard-container>div ul li{
+margin-bottom: 22px;
+}
+.scoreboard-container button{
+    font-size: 1.5rem;
+    padding: 10px;
+    border-color: white;
+}
