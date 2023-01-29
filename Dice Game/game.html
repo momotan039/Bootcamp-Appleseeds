@@ -140,9 +140,11 @@
         </div>
 
     </div>
-    <button class="control-button mybtn"><i class="fa-solid fa-pause"></i></button>
-    <div class="controls-panel show">
-        <button on class="control-button mybtn"><i class="fa-solid fa-close"></i></button>
+    <button onclick="openSettings()" class="control-button mybtn"><i class="fa-solid fa-pause"></i></button>
+    <button onclick="repeatGame()" class="reloadBtn mybtn"><i class="fa-solid fa-repeat"></i></button>
+    
+    <div class="controls-panel">
+        <button onclick="closeSettings()" class="control-button mybtn"><i class="fa-solid fa-close"></i></button>
         <div class="panel">
             <div class="title">
                 <span>Settings</span>
