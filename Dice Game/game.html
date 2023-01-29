@@ -138,11 +138,27 @@
             <button onclick="PlayAgain()" class="again mybtn">Play Again</button>
             <button onclick="startNewGame()" class="new-game mybtn">Start New Game</button>
         </div>
+
     </div>
     <button class="control-button mybtn"><i class="fa-solid fa-pause"></i></button>
-    <div class="controls-panel ">
+    <div class="controls-panel show">
+        <button on class="control-button mybtn"><i class="fa-solid fa-close"></i></button>
         <div class="panel">
-            <span>Settings</span>
+            <div class="title">
+                <span>Settings</span>
+            </div>
+            <div class="body">
+                <div class="row">
+                    <span>Sfx</span>
+                    <input id="sfxBtn" type="checkbox">
+                    <label for="sfxBtn"></label>
+                </div>
+                <div class="row">
+                    <span>Bg Sound</span>
+                    <input id="bg_soundBtn" type="checkbox">
+                    <label for="bg_soundBtn"></label>
+                </div>
+            </div>
         </div>
     </div>
 
