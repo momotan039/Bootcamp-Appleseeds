@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .smiles{
+            display: flex;
+            gap:10px;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>How many smileys do you want to see?</p>
+    <input value="1" width="100px" type="text">
+   <button  onclick="spwan()">show me</button>
+    <div class="smiles">
+        <img src="smile.png">
+    </div>
+</body>
+<script>
+function spwan(){
+    const num=+document.querySelector('input').value
+    if(num<=0)
+    {
+        alert("Please Enter number bigger than 0")
+        return
+    }
+    if(Number.isNaN(num))
+    {
+        alert("Entered Invalid Number , please try again !!")
+        return
+    }
+
+    const smiles=document.querySelector('.smiles')
+    let imgs=[]
+    for (let i = 0; i < num; i++) {
+            const smile=document.createElement('img')
+            smile.src='smile.png'
+            imgs.push(smile)
+    }
+    // clear previous smiles
+    smiles.innerHTML=""
+    smiles.append(...imgs)
+}
+
+</script>
+</html>

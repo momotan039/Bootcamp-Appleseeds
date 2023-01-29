@@ -1,0 +1,35 @@
+
+body{
+    background-color: #B2DBE5;
+}
+
+*{
+    font-family:monospace;
+}
+
+
+.center{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.letter{
+    border: solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.wrong{
+    color:red;
+}
+
+.message.true{
+color: green;
+}
+.finish.hide{
+    display: none;
+}

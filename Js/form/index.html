@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        form.submit .confirmation{
+            display: block;
+        }
+        form.submit>button{
+            display: none;
+        }
+        .confirmation{
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="">
+        <div>
+            <label>Name:</label>
+            <input name="name" required type="text">
+        </div>
+        <div>
+            <label>Age:</label>
+            <input name="age" required type="text">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input name="email"  required type="text">
+        </div>
+        <button>Submit</button>
+        <div class="confirmation">
+            <div>
+                <span>Name:</span>
+                <span class="name"></span>
+            </div>
+            <div>
+                <span>Age:</span>
+                <span class="age"></span>
+            </div>
+            <div>
+                <span>Email:</span>
+                <span class="email"></span>
+            </div>
+        <button class="confirm">Confirm</button>
+        </div>
+    </form>
+</body>
+<script src="app.js"></script>
+</html>

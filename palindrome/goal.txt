@@ -1,0 +1,4 @@
+Create an HTML page with a text input and a button. Use JavaScript to attach an event listener to
+ the button that will check if the text in the input is a palindrome (a word or phrase that reads the same forward and backward) 
+when the button is clicked. If the text is a palindrome, display an alert message saying "The text is a palindrome", otherwise, display 
+an alert message saying "The text is not a palindrome."

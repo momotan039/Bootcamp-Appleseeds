@@ -1,0 +1,63 @@
+*{
+    font-family: monospace;
+}
+
+html,body{
+    height: 100%;
+    background-color: black;
+}
+
+
+.flex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    color: white;
+}
+
+
+input{
+    border-radius: 4px;
+    padding: 13px;
+    background: grey;
+    color: white;
+    font-weight: bold;
+    width: 300px;
+    font-size: 20px;
+}
+
+
+input::placeholder{
+    color: aliceblue;
+}
+
+input.pass{
+    background-color: green;
+}
+
+
+input.error{
+    background-color: red;
+}
+button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 300px;
+    border-radius: 10px;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(225, 221, 221);
+}
+button:hover{
+    background-color: turquoise;
+}
+

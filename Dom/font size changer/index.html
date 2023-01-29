@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+   <p style="font-size:20px">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad accusantium, molestiae tenetur sit cum maiores mollitia iure obcaecati voluptatem voluptas, quisquam consectetur repudiandae omnis cumque nostrum? Libero obcaecati ut facilis!
+   </p>
+   <button style="width:100px" onclick="increase()">+</button>
+   <br>
+   <br>
+   <button style="width:100px" onclick="decrease()">-</button>
+</body>
+<script>
+function increase(){
+    const p=document.querySelector('p')
+    const fontSize= +p.style.fontSize.split('px')[0]
+    if(fontSize>=100)
+    return
+    p.style.fontSize=fontSize+10+'px'
+}
+
+function decrease(){
+    const p=document.querySelector('p')
+    const fontSize= +p.style.fontSize.split('px')[0]
+    if(fontSize<=10)
+    return
+    p.style.fontSize=fontSize-10+'px'
+}
+</script>
+</html>

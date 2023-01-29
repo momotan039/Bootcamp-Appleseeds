@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+* {
+    font-family: 'Odibee Sans', cursive;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+}
+
+body.home{
+    background-color: #1b2222;
+}
+
+.title{
+    font-weight: bold;
+    /* background: rgb(139 15 15); */
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 3rem;
+}
+.control-button{
+    position: absolute !important;
+    top: 12px !important;
+    right: 8px !important;
+    width: max-content !important;
+}
+.control-button i{
+    font-size: 2rem !important;
+    border-radius: 11px;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+}
+
+
+.home-page{
+    color: white;
+    min-height:100vh ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+.home-page h1,
+.home-page h3{
+    font-size: 50px;
+    font-weight: 100;
+    line-height: 1.5;
+}
+.home-page h3{
+    font-size: 40px;
+}
+.home-page ul{
+    padding: 0 40px;
+    font-size: 30px;
+}
+.home-page hr{
+    width: 100%;
+}
+.home-page .set-score{
+    width: 100%;
+}
+
+.home-page .set-score input {
+    width: 100%;
+    padding: 2px 5px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+@media (max-width:480px) {
+body {
+    overflow: auto;
+}
+h1,h3{
+    font-size: 30px !important;
+}
+}
+
+@media (max-width:700px) {
+    .game-page main{
+        flex-direction: column !important;
+    }
+    .game-page main div{
+        width: 100% !important;
+    }
+}
+.game-page {
+    background-color: black;
+    height: 100vh;
+}
+.game-page h1{
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.game-page main {
+    display: flex;
+    padding: 50px 20px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.game-page main>div:not(:nth-child(2)) {
+    flex: 1;
+    font-size: 30px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #4d616159;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.game-page main>div:not(:nth-child(2))::after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(transparent, #940b0b, #3a0606,transparent,transparent);
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 1s;
+    transform: scale(0);
+}
+.game-page main>div:not(:nth-child(2)).playing{
+    background:none;
+    z-index: 1;
+}
+.game-page main>div:not(:nth-child(2)).playing::after{
+    transform: scale(2);
+    opacity: 1;
+    z-index: -1;
+}
+
+.game-page main .center {
+    flex: 2;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-page main .center .turn{
+    font-size: 50px;
+    background-color: #1b2222;
+    padding: 10px;
+    border-radius: 13px;
+}
+
+.game-page main .center .dices {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.game-page main .center .dices .container{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 50px;
+}
+.game-page main .center .dices .container .row{
+    display: flex;
+    width: 50%; 
+}
+.game-page main .center .dices .container .row:nth-of-type(2){
+    justify-content:flex-end;
+}
+.game-page main .center .dices .container .row .dice {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    transition: all .3s;
+}
+
+
+.game-page main .center .dices .container .row .dice.dice-1.roll{
+    animation-name: rolling1;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.game-page main .center .dices .container .row .dice.dice-1.movement{
+    transform: translate(100%);
+}
+
+.game-page main .center .dices .container .row .dice.dice-2.roll{
+    animation-name: rolling2;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+.game-page main .center .dices .container .row .dice.dice-2.movement{
+    transform: translate(-100%);
+}
+
+
+@keyframes rolling1{
+    to{
+        transform:rotate(4turn);
+    }
+}
+@keyframes rolling2{
+    to{
+        transform:rotate(-4turn);
+    }
+}
+
+.game-page main .center .dices .container .dice > div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-page main .center .dices .container .dice span{
+    width: 100%;
+    height: 20%;
+    background-color: #940b0b;
+    border-radius: 50%;
+}
+
+.game-page main .center .dices .container .dice div span {
+    visibility: hidden;
+}
+
+.game-page main .center .dices .container .dice.s1 .c2 span:nth-child(2)
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s2 .c1 span:nth-child(1),
+.game-page main .center .dices .container .dice.s2 .c3 span:nth-child(3)
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s3 .c1 span:nth-child(1),
+.game-page main .center .dices .container .dice.s3 .c2 span:nth-child(2),
+.game-page main .center .dices .container .dice.s3 .c3 span:nth-child(3)
+{
+    visibility: visible;
+}
+
+
+.game-page main .center .dices .container .dice.s4 .c1 span:not(:nth-child(2)),
+.game-page main .center .dices .container .dice.s4 .c3 span:not(:nth-child(2))
+{
+    visibility: visible;
+}
+
+.game-page main .center .dices .container .dice.s5 .c1 span:not(:nth-child(2)),
+.game-page main .center .dices .container .dice.s5 .c2 span:nth-child(2),
+.game-page main .center .dices .container .dice.s5 .c3 span:not(:nth-child(2))
+{
+    visibility: visible;
+}
+
+
+
+.game-page main .center .dices .container .dice.s6 .c1 span,
+.game-page main .center .dices .container .dice.s6 .c3 span{
+    visibility: visible;
+}
+
+
+
+button.mybtn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 50px;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+button.mybtn::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    right: 50%;
+    width: 5px;
+    height: 5px;
+    background: darkslategrey;
+    transform-origin: center;
+    border-radius: 50%;
+    transform: scale(0);
+}
+button.mybtn:hover::after{
+    transform: scale(200);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+
+button.mybtn::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    right: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgb(139, 15, 15);
+    transform-origin: center;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+button.mybtn:active::before{
+    transform: scale(800);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+button.mybtn.lock{
+    background: grey ;
+    user-select: none;
+    pointer-events: none;
+}
+.controls-panel{
+   align-content: space-around !important;
+}
+.controls-panel .panel{
+    background: #4d616147;
+    width: 100%;
+    max-width: 601px;
+    height: 298px;
+    max-height: max-content;
+}
+.controls-panel .panel .body{
+    display: flex;
+    height: 82%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 10px;
+}
+.controls-panel .panel .body .row{
+    text-align: center;
+}
+.controls-panel .panel .body .row span{
+    margin-right: 10px;
+}
+.controls-panel .panel label{
+    display: inline-block;
+    height: 50px;
+    max-width: 185px;
+    width: 100%;
+    border-radius: 31px;
+    position: relative;
+    background: rgb(67 157 67);
+}
+
+.controls-panel .panel label::after{
+    position: absolute;
+    content: 'Off';
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+    font-size: 31px;
+    padding: 10px;
+    border-radius: 45%;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+.controls-panel .panel label::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 31px;
+    background-color: #972424;
+    transition: all .3s;
+    right: 0;
+    top: 0;
+}
+
+.controls-panel .panel input{
+    display: none;
+}
+
+.controls-panel .panel input[type=checkbox]:checked + label::after{
+    left: 78%;
+    content: 'On';
+}
+
+.controls-panel .panel input[type=checkbox]:checked + label::before{
+    opacity: 0;
+}
+
+div.play,
+.scoreboard-container,
+.shoked-popUp,
+.controls-panel
+{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    color: white;
+    background-color: rgb(0 0 0 / 92%);
+    font-size: 3rem;
+    transition: all .3s;
+    transform: translateY(-100%);
+}
+
+div.play.show,
+.scoreboard-container.show,
+.shoked-popUp.show,
+.controls-panel.show
+{
+transform: none;
+}
+
+
+
+
+div.play button{
+    width: 300px;
+}
+
+.shoked-popUp img{
+    width: 50%;
+}
+
+.shoked-popUp span{
+    color: #ff2436;
+    text-decoration: underline;
+}
+
+.scoreboard-container{
+font-size: 2rem;
+letter-spacing: 5px;
+background-color: rgb(0 0 0 / 50%);
+gap: 30px;
+}
+
+.scoreboard-container>div{
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+    border-radius: 10px;
+    max-width: 800px;
+    padding: 30px 20px;
+}
+
+.scoreboard-container>div ul{
+    padding: 10px 57px;
+}
+.scoreboard-container>div ul li{
+margin-bottom: 22px;
+}
+.scoreboard-container button{
+    font-size: 1.5rem;
+    padding: 10px;
+    border-color: white;
+}

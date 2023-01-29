@@ -14,6 +14,28 @@ body {
     background-color: rgb(77, 77, 77);
     color: white;
     scroll-behavior: smooth;
+    /* overflow-y: hidden; */
+}
+
+
+body .arrows .left {
+    width: 34px;
+    height: 11px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 20px;
+    left: 24%;
+}
+
+body .arrows .right {
+    width: 34px;
+    height: 11px;
+    background-color: white;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 20px;
+    right: 24%;
 }
 
 .container {
@@ -77,29 +99,85 @@ body section {
     background-color: rgba(0, 0, 0, 0.343);
     margin-bottom: 20px !important;
     position: relative;
+    overflow-y: auto;
 }
 
-body section h1.title{
- font-size: 4rem;   
- text-align: center;
- text-transform: uppercase;
- z-index: 1;
- position: relative;
- padding-top: 120px;
+body section h1.title {
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1;
+    position: relative;
+    padding-top: 120px;
 }
 
-body section svg{
+body section svg {
     position: absolute;
     top: 0;
     left: 0;
 }
-.body{
-    padding-top: 100px;
+
+.arrowsLink{
+    position: absolute;
+    top: 17%;
+    right: 0;
+    width: 100px;
+    z-index: 2;
+    height: 100px;
 }
-.home-section {
+.arrowsLink .arrows {
+    position: absolute;
+    top: 72%;
+    right: 0;
+    width: 100px;
+    height: 100px;
 }
 
-.home-section h1{
+ .arrowsLink .arrows .arrow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 30%;
+    animation: slideDown 2s infinite alternate;
+}
+
+ .arrowsLink .arrows .arrow:nth-of-type(2) {
+    top: 0;
+    animation: slideDown2 3s infinite alternate;
+}
+
+ .arrowsLink .arrows .arrow:nth-of-type(3) {
+    animation: slideDown3 6s infinite alternate;
+}
+
+
+
+@keyframes slideDown {
+    to {
+        transform: translateY(18%);
+    }
+}
+
+@keyframes slideDown2 {
+    to {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideDown3 {
+    to {
+        transform: translateY(40%);
+        opacity: 0;
+    }
+}
+
+.body {
+    padding-top: 100px;
+}
+
+
+.home-section h1 {
     text-align: center;
     grid-column: 1/3;
     grid-row: 1/3;
@@ -142,32 +220,113 @@ body section svg{
 }
 
 @media (max-width:991px) {
-    section h1.title{
+    section h1.title {
         font-size: 2.2rem !important;
         padding-top: 40px !important;
     }
- 
+
     .home-section .parent {
         flex-direction: column;
     }
 
 }
+
 @media (max-width:668px) {
-    section h1.title{
+    section h1.title {
         font-size: 1.2rem !important;
     }
-    .home-section .parent>div{
+
+    .home-section .parent>div {
         width: 100% !important;
     }
-   
+
+}
+.skills-section{
+    padding-top: 30px;
+    height: 100vh;
+}
+.skills-section .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 17px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.skills-section .content >div{
+    height: 320px;
+    width: 100%;
+    padding: 20px;
+    background-color: #171313;
+    border-radius: 10px;
+}
+.skills-section .content >div h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+.skills-section .content >div h1::after{
+    position: absolute;
+    content: "";
+    top: 110%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #333;
+}
+.skills-section .content  i{
+    margin-right: 10px;
 }
 
-
+.skills-section .content span{
+    display: block;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #157fb2;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.skills-section .content span.skill::after{
+    position: absolute;
+    content: "";
+    top: 174%;
+    left: 0;
+    height: 11px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #333;
+}
+.skills-section .content span.skill::before{
+    position: absolute;
+    content: "";
+    top: 174%;
+    left: 0;
+    height: 11px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: black;
+    z-index: 1;
+}
+.skills-section .content span.skill.fill::before{
+/* background-color: red; */
+}
+.skills-section .content span span.percent{
+    position: absolute;
+    color: white;
+    font-size: 1rem;
+    top: 100%;
+    left: 0;
+}
 .hidden {
     display: none !important;
 }
 
-
+.portfolio-section{
+    height: 100vh !important;
+}
 .portfolio-section h1 {
     font-size: 3rem;
     text-align: center;
@@ -183,25 +342,27 @@ body section svg{
 }
 
 .portfolio-section .projects .project {
-    height: 350px;
-    width: 300px;
+    height: 500px;
+    width: 414px;
     border-radius: 15px;
     display: flex;
     flex-direction: column-reverse;
-  
 }
-.portfolio-section .projects .project .title-project{
-text-align: center;
-background-color: rgb(54, 45, 45);
-border-radius: 3px;
-padding: 6px;
-color: white;
-z-index: 1;
+
+.portfolio-section .projects .project .title-project {
+    text-align: center;
+    background-color: rgb(54, 45, 45);
+    border-radius: 3px;
+    padding: 6px;
+    color: white;
+    z-index: 1;
 }
-.portfolio-section .projects .project .thumbnail{
+
+.portfolio-section .projects .project .thumbnail {
     height: 80%;
     width: 100%;
 }
+
 .portfolio-section .projects .project .thumbnail img {
     background: url(images/tesla.png);
     background-position: bottom;
@@ -211,18 +372,87 @@ z-index: 1;
     transition: all .3s;
 }
 
-.portfolio-section .projects .project:hover
-
- .thumbnail 
-{
-   transform: scale(1.2)
+.portfolio-section .projects .project:hover .thumbnail {
+    transform: scale(1.2)
 }
 
-.contact-section .parent{
-display: flex;
-height: 100vh;
+.contact-section {
+    margin-bottom: 0 !important;
 }
-.contact-section .parent .contacts{
+
+.contact-section .parent {
+    height: 80vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact-section .parent hr {
+    width: 60%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-section .parent .keep-in-touch h1 {
+    font-size: 3rem;
+}
+
+.contact-section .parent .keep-in-touch form {
+    border-radius: 10px;
+    text-align: center;
+    max-width: 100%;
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.contact-section .parent .keep-in-touch input,
+.contact-section .parent .keep-in-touch textarea {
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: #1C1C1C;
+    color: white;
     width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-section .parent .keep-in-touch button {
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #273036;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-section .parent .keep-in-touch button:hover span {
+    font-size: 20px;
+}
+
+.contact-section .parent .keep-in-touch .top {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-section .parent .contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.contact-section .parent .contacts a {
+    color: white;
+}
+
+.contact-section .parent .contacts a i {
+    font-size: 60px;
 }
