@@ -10,25 +10,27 @@ inputs.forEach((input, i) => {
             inputs[0].focus()
             resetInputs()
         }
+
     })
 })
 
 inputs[0].addEventListener('paste', (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const nums = e.clipboardData.getData('text').split('')
-    
-    setTimeout(() => {
+
         inputs.forEach((input, i) => {
             if (nums.length != 0)
                 input.value = nums.shift()
+                
+                if (i == inputs.length - 1) {
+                    inputs[0].focus()
+                }
         })
-    }, 10);
+        setTimeout(()=>{
+            resetInputs()
+            inputs[0].focus()
+        },100)
 
-    inputs[0].focus()
-    resetInputs()
-    setTimeout(()=>{
-          
-    },20)
 })
 
 

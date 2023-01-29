@@ -12,8 +12,11 @@ function fillWord(word){
         c.push(span)
         return c
     },[])
+
     goal.append(...chars_elems)
 }
+
+
 function createEmptyInputs(word){
     const chars=word.split('')
     const squars=chars.reduce((c,p,i)=>{
@@ -31,6 +34,7 @@ function refreshWord(){
         fillWord(random_word)
         createEmptyInputs(random_word)
 }
+
 
 function runGame(){
     refreshWord()
