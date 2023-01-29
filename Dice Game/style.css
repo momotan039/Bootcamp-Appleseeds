@@ -16,7 +16,10 @@ body {
     background-color: black;
     height: 100vh;
 }
-
+.game-page h1{
+    font-weight: 100;
+    margin-bottom: 20px;
+}
 .game-page main {
     display: flex;
     padding: 50px 20px;
@@ -43,7 +46,7 @@ body {
 .game-page main>div:not(:nth-child(2))::after {
     position: absolute;
     content: '';
-    background-color: #3a0606;
+    background: linear-gradient(transparent, #940b0b, #3a0606,transparent,transparent);
     bottom: 0;
     right: 0;
     width: 100%;
@@ -53,10 +56,14 @@ body {
     transition: all 1s;
     transform: scale(0);
 }
-
+.game-page main>div:not(:nth-child(2)).playing{
+    background:none;
+    z-index: 1;
+}
 .game-page main>div:not(:nth-child(2)).playing::after{
     transform: scale(2);
-    opacity: 0.5;
+    opacity: 1;
+    z-index: -1;
 }
 
 .game-page main .center {
@@ -132,14 +139,12 @@ gap: 50px;
 
 @keyframes rolling1{
     to{
-        transform:rotate(45deg);
-        transform: translate(100%);
+        transform:rotate(4turn);
     }
 }
 @keyframes rolling2{
     to{
-        transform:rotate(-45deg);
-        transform: translate(-100%);
+        transform:rotate(-4turn);
     }
 }
 
@@ -220,7 +225,6 @@ button.mybtn {
 }
 
 
-
 button.mybtn::after{
     content: '';
     position: absolute;
@@ -260,11 +264,17 @@ button.mybtn:active::before{
     transition: all 0.5s ease;
     opacity: 0;
 }
-
+button.mybtn.lock{
+    background: grey ;
+    user-select: none;
+    pointer-events: none;
+}
 
 
 .scoreboard-container,
-.shoked-popUp{
+.shoked-popUp,
+.controls-panel
+{
     position: absolute;
     content: '';
     width: 100%;
@@ -283,7 +293,9 @@ button.mybtn:active::before{
 }
 
 .scoreboard-container.show,
-.shoked-popUp.show{
+.shoked-popUp.show,
+.controls-panel.show
+{
 transform: none;
 }
 .shoked-popUp img{

@@ -2,6 +2,11 @@ const roll = document.querySelector('.roll')
 const hold = document.querySelector('.hold')
 const dice1 = document.querySelectorAll('.dices .dice')[0]
 const dice2 = document.querySelectorAll('.dices .dice')[1]
+const bg_audio=document.querySelector('.bg-audio')
+const rolling_sound=document.querySelector('.rolling-audio')
+const pop_up_sound=document.querySelector('.popUp-audio')
+const winner_sound=document.querySelector('.winner-audio')
+const loseRound_sound=document.querySelector('.twice-6-audio')
 const elmPlayers = {
     player1: {
         main: document.querySelectorAll('.game-page main>div:not(:nth-child(2))')[0],
@@ -17,14 +22,22 @@ const elmPlayers = {
     },
     turn: document.querySelector('.game-page main .center .turn')
 }
-
+let isStartedMusic=false
 let target_score
 let player1 
 let player2 
 let current_player
 let isPlayer1 = true
 
+
+document.addEventListener('mouseover',()=>{
+
+})
+
 function runGame() {
+     //run background audio
+      bg_audio.play();
+
     initGame()
     refreshElements()
 }
@@ -32,13 +45,15 @@ function runGame() {
 const rollBtnClicking=() => {
     if (roll.classList.contains('lock'))
         return
-
+    
     // Lock the button
     lockButtons()
 
     dice1.classList.add('roll')
     dice2.classList.add('roll')
 
+    // Apply sound effect rolling
+    rolling_sound.play()
     //Apply roll animation for 1 second
     setTimeout(() => {
 
@@ -62,11 +77,9 @@ const rollBtnClicking=() => {
         dice1.classList.remove('roll')
         dice2.classList.remove('roll')
 
-      
-
         // Remove Lock the button
         unLockButtons()
-    }, 1000);
+    }, 1500);
 }
 
 const holdBtnClicking=() => {
@@ -198,8 +211,11 @@ function finishGame(data){
     const player2_winning_num = scoreboard.querySelectorAll('.scoreboard span')[1]
     const player_result = scoreboard.querySelector('.scoreboard-container span')
     const message_Lose = scoreboard.querySelector('.scoreboard-container span.message')
-
     scoreboard.classList.add('show')
+
+    // winner sound effect
+    winner_sound.play()
+    
 
     let isWinnerPlayer1=false
     if(data.player===player1)
@@ -222,7 +238,7 @@ function finishGame(data){
 }
 
 function checkLooserRound(num) {
-
+debugger
     if (num!==12)
         return
     const dialog = document.querySelector('body .shoked-popUp')
@@ -230,6 +246,8 @@ function checkLooserRound(num) {
     h1.innerText = '8'
     let seconds = 8;
     dialog.classList.add('show')
+    // Play pop up sound
+    loseRound_sound.play()
     clearCurrent()
     changePlayer()
     const idInterval = setInterval(() => {
@@ -267,4 +285,7 @@ function PlayAgain(){
     initGame()
     refreshElements()
 }
+
 runGame()
+
+
