@@ -22,3 +22,14 @@ body{
     padding: 10px;
     border-radius: 5px;
 }
+
+.message.wrong{
+    color:red;
+}
+
+.message.true{
+color: green;
+}
+.finish.hide{
+    display: none;
+}
