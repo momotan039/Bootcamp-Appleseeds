@@ -29,15 +29,29 @@ let player2
 let current_player
 let isPlayer1 = true
 
+function PlayGame(){
+    bg_audio.play()
+    const playOverly =document.querySelector('div.play')
+    debugger
+    playOverly.classList.remove('show')
+}
+function StartGame(){
+    const score=+document.querySelector('input').value;
+    if(Number.isNaN(score)||score<=1)
+    return
 
-document.addEventListener('mouseover',()=>{
-
-})
+    localStorage.removeItem('player1')
+    localStorage.removeItem('player2')
+    location.replace('./game.html?score='+score)
+}
 
 function runGame() {
+    if(location.href.includes('index.html'))
+    return
      //run background audio
-      bg_audio.play();
-
+    //  setTimeout(()=>{
+    //     bg_audio.play();
+    //  },1000)
     initGame()
     refreshElements()
 }
@@ -100,11 +114,18 @@ const holdBtnClicking=() => {
     changePlayer()
 }
 
-let holdBtnHover=()=>{
-}
 
 function initGame() {
-    target_score=50
+debugger
+    //set target score
+    const searchParams = new URLSearchParams(window.location.search);
+    const score = +searchParams.get("score");
+    if(typeof score ==='string' || !score ||score<=1)
+    location.replace('./index.html')
+    
+    target_score=+score
+    
+
  player1 = {
     total: 0,
     current: 0,
@@ -120,7 +141,6 @@ function initGame() {
 
     roll.addEventListener('click', rollBtnClicking)
     hold.addEventListener('click',holdBtnClicking )
-    hold.addEventListener('mouseover',holdBtnHover)
 
     //get players data from LocalStorage
     const data1 = localStorage.getItem('player1')
@@ -285,6 +305,8 @@ function PlayAgain(){
     initGame()
     refreshElements()
 }
+
+
 
 runGame()
 

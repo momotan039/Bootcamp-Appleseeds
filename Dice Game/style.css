@@ -12,6 +12,76 @@ body {
     position: relative;
 }
 
+body.home{
+    background-color: #1b2222;
+}
+
+.title{
+    font-weight: bold;
+    /* background: rgb(139 15 15); */
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 3rem;
+}
+.home-page{
+    color: white;
+    min-height:100vh ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+.home-page h1,
+.home-page h3{
+    font-size: 50px;
+    font-weight: 100;
+    line-height: 1.5;
+}
+.home-page h3{
+    font-size: 40px;
+}
+.home-page ul{
+    padding: 0 40px;
+    font-size: 30px;
+}
+.home-page hr{
+    width: 100%;
+}
+.home-page .set-score{
+    width: 100%;
+}
+
+.home-page .set-score input {
+    width: 100%;
+    padding: 2px 5px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+@media (max-width:480px) {
+body {
+    overflow: auto;
+}
+h1,h3{
+    font-size: 30px !important;
+}
+}
+
+@media (max-width:700px) {
+    .game-page main{
+        flex-direction: column !important;
+    }
+    .game-page main div{
+        width: 100% !important;
+    }
+}
 .game-page {
     background-color: black;
     height: 100vh;
@@ -271,6 +341,7 @@ button.mybtn.lock{
 }
 
 
+.play,
 .scoreboard-container,
 .shoked-popUp,
 .controls-panel
@@ -292,12 +363,18 @@ button.mybtn.lock{
     transform: translateY(-100%);
 }
 
+.play.show,
 .scoreboard-container.show,
 .shoked-popUp.show,
 .controls-panel.show
 {
 transform: none;
 }
+
+.play button{
+    width: 300px;
+}
+
 .shoked-popUp img{
     width: 50%;
 }
