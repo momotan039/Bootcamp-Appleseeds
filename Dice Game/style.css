@@ -27,6 +27,24 @@ body.home{
     color: white;
     font-size: 3rem;
 }
+.control-button{
+    position: absolute !important;
+    top: 12px !important;
+    right: 8px !important;
+    width: max-content !important;
+}
+.control-button i{
+    font-size: 2rem !important;
+    border-radius: 11px;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(90deg, #940b0b, #3a0606);
+}
+
+.control-button.play i::before{
+    content: '\f04b';
+}
+
 .home-page{
     color: white;
     min-height:100vh ;
@@ -341,7 +359,7 @@ button.mybtn.lock{
 }
 
 
-.play,
+div.play,
 .scoreboard-container,
 .shoked-popUp,
 .controls-panel
@@ -363,7 +381,7 @@ button.mybtn.lock{
     transform: translateY(-100%);
 }
 
-.play.show,
+div.play.show,
 .scoreboard-container.show,
 .shoked-popUp.show,
 .controls-panel.show
@@ -371,7 +389,7 @@ button.mybtn.lock{
 transform: none;
 }
 
-.play button{
+div.play button{
     width: 300px;
 }
 

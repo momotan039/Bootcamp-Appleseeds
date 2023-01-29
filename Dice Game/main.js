@@ -1,5 +1,6 @@
 const roll = document.querySelector('.roll')
 const hold = document.querySelector('.hold')
+const ctrBtn = document.querySelector('.control-button')
 const dice1 = document.querySelectorAll('.dices .dice')[0]
 const dice2 = document.querySelectorAll('.dices .dice')[1]
 const bg_audio=document.querySelector('.bg-audio')
@@ -116,7 +117,6 @@ const holdBtnClicking=() => {
 
 
 function initGame() {
-debugger
     //set target score
     const searchParams = new URLSearchParams(window.location.search);
     const score = +searchParams.get("score");
@@ -141,7 +141,9 @@ debugger
 
     roll.addEventListener('click', rollBtnClicking)
     hold.addEventListener('click',holdBtnClicking )
-
+    ctrBtn.addEventListener('click',()=>{
+        ctrBtn.classList.toggle('play')
+    })
     //get players data from LocalStorage
     const data1 = localStorage.getItem('player1')
     const data2 = localStorage.getItem('player2')
