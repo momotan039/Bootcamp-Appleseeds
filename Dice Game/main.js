@@ -340,8 +340,10 @@ function botRolling(){
                 }, 1500);
 
                 clearInterval(idBotInterval)
-                roll.classList.remove('bot')
+                setTimeout(() => {
+                    roll.classList.remove('bot')
                 hold.classList.remove('bot')
+                }, 1500);
             }
             --r_times
         }, 1500);
