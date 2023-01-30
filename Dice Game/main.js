@@ -103,6 +103,7 @@ function openSettings() {
 function runGame() {
     if (!location.href.includes('game.html'))
         return
+        
     initGame()
     refreshElements()
 }
@@ -279,7 +280,6 @@ function removeLastShape(dice) {
 function changeAShape(dice) {
     const shapes = ['s1', 's2', 's3', 's4', 's5', 's6']
     let random = Math.floor(Math.random() * shapes.length)
-    debugger
     const randomShap = shapes[random]
     dice.classList.add(randomShap)
     return random + 1;
@@ -477,8 +477,5 @@ function PlayAgain() {
     initGame()
     refreshElements()
 }
-
-
-
 
 runGame()
