@@ -12,15 +12,17 @@ const loseRound_sound = document.querySelector('.twice-6-audio')
 
 let isSfxPlaying = true
 let isBgPlaying = true
-
+let isBot=true
 const elmPlayers = {
     player1: {
+        name:'Player1',
         main: document.querySelectorAll('.game-page main>div:not(:nth-child(2))')[0],
         total: document.querySelectorAll('.game-page .info .score')[0],
         current: document.querySelectorAll('.game-page .current .num')[0],
         winning: document.querySelectorAll('.game-page .winning-times .num')[0],
     },
     player2: {
+        name:'Player2',
         main: document.querySelectorAll('.game-page main>div:not(:nth-child(2))')[1],
         total: document.querySelectorAll('.game-page .info .score')[1],
         current: document.querySelectorAll('.game-page .current .num')[1],
@@ -68,13 +70,24 @@ function PlayGame() {
 }
 
 function StartGame() {
-    const score = +document.querySelector('input').value;
-    if (Number.isNaN(score) || score <= 1)
+    // get Mode
+    debugger
+    const modes=document.getElementsByName('mode')
+    let isBot;
+    modes.forEach(m=>{
+       if(m.checked)
+       isBot=m.value
+    })
+// get score
+    const score = +document.getElementById('scoreInput').value;
+    if (!isBot || Number.isNaN(score) || score <= 1)
         return
 
     localStorage.removeItem('player1')
     localStorage.removeItem('player2')
-    location.replace('./game.html?score=' + score)
+    // set mode here
+    localStorage.setItem('isBot',isBot)
+    location.replace('./game.html?score=' + score);
 }
 
 function closeSettings() {
@@ -88,7 +101,7 @@ function openSettings() {
 }
 
 function runGame() {
-    if (location.href.includes('index.html'))
+    if (!location.href.includes('game.html'))
         return
     initGame()
     refreshElements()
@@ -135,7 +148,7 @@ const rollBtnClicking = () => {
 }
 
 const holdBtnClicking = () => {
-    if (current_player.current == 0)
+    if (current_player.current === 0)
         return
 
     //change total current-player
@@ -146,27 +159,42 @@ const holdBtnClicking = () => {
     // check winner or exceed predefined score
     const player_winner = checkWinner()
     if (player_winner)
-        finishGame(player_winner)
+        {
+            finishGame(player_winner)
+            return
+        }
 
     //change player
     changePlayer()
 }
 
-function setTargetScore() {
+function getTargetScore() {
     //set target score
     const searchParams = new URLSearchParams(window.location.search);
     const score = +searchParams.get("score");
     if (typeof score === 'string' || !score || score <= 1)
         location.replace('./index.html')
     target_score = +score
+    localStorage.setItem('score',target_score)
 }
 
-function configSettingsPanel() {
+function getMode(){
+    const bot=localStorage.getItem('isBot')
+    isBot=bot=='0'?false:true
+    if(isBot)
+    {
+        player2.name='Bot'
+        const opponent=document.getElementById('OpponentName');
+        opponent.innerText='Bot'
+    }
+}
+
+function configEventsSettingsPanel() {
     // style sfx sound button
     const sfx = document.getElementById('sfxBtn')
     sfx.addEventListener('change', () => {
-        isOff = event.target.checked
-        if (isOff)
+        isOn = event.target.checked
+        if (!isOn)
         isSfxPlaying = false
         else
         isSfxPlaying = true
@@ -176,8 +204,8 @@ function configSettingsPanel() {
 
     const bg_soundbtn = document.getElementById('bg_soundBtn')
     bg_soundbtn.addEventListener('change', () => {
-        isOff = event.target.checked
-        if (isOff)
+        isOn = event.target.checked
+        if (!isOn)
         isBgPlaying = false
         else
         isBgPlaying = true
@@ -186,29 +214,41 @@ function configSettingsPanel() {
     })
 }
 
-function getSoundsStates(){
+function getSoundsStatesFromStorage(){
     const bg=localStorage.getItem('bg')
     const sfx=localStorage.getItem('sfx')
 
     isBgPlaying=bg=='false'?false:true
     isSfxPlaying=sfx=='false'?false:true
 }
-
+function renderSoundControls(){
+const bgBtn=document.getElementById('bg_soundBtn')
+const sfxBtn=document.getElementById('sfxBtn')
+debugger
+bgBtn.checked=isBgPlaying
+sfxBtn.checked=isSfxPlaying
+}
 function initGame() {
-    setTargetScore()
-    configSettingsPanel()
-    getSoundsStates()
+    getTargetScore()
     player1 = {
         total: 0,
         current: 0,
-        winning: 0
+        winning: 0,
+        name:'name'
     }
 
     player2 = {
         total: 0,
         current: 0,
-        winning: 0
+        winning: 0,
+        name:'name'
     }
+
+    getMode()
+    configEventsSettingsPanel()
+    getSoundsStatesFromStorage()
+    renderSoundControls()
+   
 
     isPlayer1 = true
 
@@ -239,6 +279,7 @@ function removeLastShape(dice) {
 function changeAShape(dice) {
     const shapes = ['s1', 's2', 's3', 's4', 's5', 's6']
     let random = Math.floor(Math.random() * shapes.length)
+    debugger
     const randomShap = shapes[random]
     dice.classList.add(randomShap)
     return random + 1;
@@ -269,16 +310,42 @@ function clearCurrent() {
 }
 
 function changePlayer() {
-    if (isPlayer1) {
+    if (isPlayer1) 
         current_player = player2
-        elmPlayers.turn.innerText = 'Turn : Player2'
-    } else {
+     else 
         current_player = player1
-        elmPlayers.turn.innerText = 'Turn : Player1'
-    }
+    
+    elmPlayers.turn.innerText = `Turn : ${current_player.name}`
+
     elmPlayers.player1.main.classList.toggle('playing')
     elmPlayers.player2.main.classList.toggle('playing')
     isPlayer1 = !isPlayer1
+
+    if(!isPlayer1 && isBot){
+         botRolling()
+    }
+}
+function botRolling(){
+    // get times of rolling from 1-5
+    let r_times=Math.floor(Math.random()*5+1)
+    roll.classList.add('bot')
+    hold.classList.add('bot')
+    setTimeout(() => {
+        idBotInterval= setInterval(() => {
+        roll.click()
+            if(r_times===0)
+            {
+                setTimeout(() => {
+                    hold.click()
+                }, 1500);
+
+                clearInterval(idBotInterval)
+                roll.classList.remove('bot')
+                hold.classList.remove('bot')
+            }
+            --r_times
+        }, 1500);
+    }, 500);
 }
 
 function checkWinner() {
@@ -341,6 +408,14 @@ function finishGame(data) {
 function checkLooserRound(num) {
     if (num !== 12)
         return
+        
+    if(isBot && current_player==player2)
+    {
+        clearInterval(idBotInterval)
+        hold.classList.remove('bot')
+        roll.classList.remove('bot')
+    }
+
     const dialog = document.querySelector('body .shoked-popUp')
     const h1 = document.querySelector('body .shoked-popUp h1')
     h1.innerText = '8'
@@ -350,10 +425,10 @@ function checkLooserRound(num) {
     playSound(loseRound_sound,1)
     clearCurrent()
     changePlayer()
+
     const idInterval = setInterval(() => {
         h1.innerText = --seconds
     }, 1000)
-
     setTimeout(() => {
         clearInterval(idInterval)
         dialog.classList.remove('show')
@@ -374,7 +449,22 @@ function unLockButtons() {
 function startNewGame() {
     localStorage.removeItem('player1')
     localStorage.removeItem('player2')
+    localStorage.removeItem('score')
+    localStorage.removeItem('isBot')
     location.replace('./index.html')
+}
+
+function resumeGame(){
+    location.replace('./game.html?score=' + score)
+}
+
+function onLoadHomePage(){
+     score=localStorage.getItem('score')
+     if(score>1)
+     {
+        const resume=document.querySelector('.container-resume')
+        resume.classList.remove('hide')
+     }
 }
 
 function PlayAgain() {
@@ -385,6 +475,7 @@ function PlayAgain() {
     initGame()
     refreshElements()
 }
+
 
 
 

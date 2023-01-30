@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
+<body onload="onLoadHomePage()" class="home">
     <h1 class="title">Dice Game</h1>
    <div class="home-page">
     <div class="instrections">
@@ -32,11 +32,30 @@
         </li>
     </ul>
     </div>
+    <div class="container-resume">
+        <hr>
+        <div class="resume hide">
+            <h1>Would you like to complete the last game ?</h1>
+            <button onclick="resumeGame()" class="mybtn">Complete</button>
+        </div>
+    </div>
     <hr>
     <div class="set-score">
+        <div class="mode">
+            <h1>Select Mode:</h1>
+            <div class="option">
+                <label for="notBot">Humen</label>
+            <input id="notBot" type="radio" name="mode" value="0">
+            </div>
+           <div class="option">
+            <label for="Bot">Bot</label>
+            <input id="Bot" type="radio" name="mode" value="1">
+           </div>
+        </div>
         <h1> Please select The target score</h1>
-    <input placeholder="set score..." type="text">
-    <button onclick="StartGame()" class="mybtn">Start Game</button>
+    <input id="scoreInput" placeholder="set score..." type="text">
+    <button onclick="StartGame()" class="mybtn">Start New Game</button>
+    
     </div>
    </div>
 </body>
