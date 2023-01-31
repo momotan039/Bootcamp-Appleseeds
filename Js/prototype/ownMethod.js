@@ -40,14 +40,14 @@ Player.prototype.mapLevels = function (callback) {
 }
 
 Player.prototype.reduceLevels = function (callback) {
-    let index=0
     let previous = this.passLevels[0];
-    let current=this.passLevels[1];
-    this.passLevels.forEach((pl) => {
-        previous=callback(previous,current,index)
-        current=pl
-        index++
+    this.passLevels.forEach((pl,i) => {
+        if(i!==this.passLevels.length-1)
+        {
+            previous=callback(previous,this.passLevels[i+1],i)
+        }
     });
+
     return previous
 }
 
@@ -58,6 +58,8 @@ console.log(p.mapLevels(l => {
     return l + ' finish'
 }));
 
-console.log(p.reduceLevels((p,c,i) => {
+resReduce=p.reduceLevels((p,c,i) => {
     return p+','+c;
-}));
+})
+
+console.log(resReduce);
