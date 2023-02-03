@@ -1,22 +1,39 @@
-body{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    overflow: hidden;
+}
+#grid{
     display: grid;
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows: repeat(20,auto);
+    grid-template-columns: repeat(21,1fr);
+    grid-template-rows: repeat(15,1fr);
+    height: 100vh;
+    width: 100%;
 }
-
 .item{
-    width: 65px;
-    height: 65px;
+    border: thin solid transparent;
+    cursor: pointer;
+}
+.item:hover{
+    border-color: red;
+}
+.dirt{
+    background: url(images/block.png) center;
+    background-size: contain;
 }
 
-.red{
-    background-color: red;
+.stone-block{
+    background: url(images/stoneBlock.png) center;
+    background-size: contain;
 }
-
-.blue{
-    background-color: blue;
+.wood-block{
+    background: url(images/woodBlock.png) center;
+    background-size: contain;
 }
-
-.green{
-    background-color: green;
+.grass-block{
+    background: url(images/greenBlock.png) center;
+    background-size: contain;
 }
