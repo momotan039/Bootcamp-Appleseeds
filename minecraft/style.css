@@ -1,0 +1,22 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,auto);
+}
+
+.item{
+    width: 65px;
+    height: 65px;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    background-color: green;
+}

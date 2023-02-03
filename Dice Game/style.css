@@ -435,6 +435,7 @@ button.mybtn.lock{
     user-select: none;
     pointer-events: none;
 }
+
 .controls-panel{
    align-content: space-around !important;
 }
@@ -505,7 +506,7 @@ button.mybtn.lock{
     opacity: 0;
 }
 
-div.play,
+ div.play,
 .scoreboard-container,
 .shoked-popUp,
 .controls-panel

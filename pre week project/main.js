@@ -11,6 +11,7 @@ import { Player } from "./models/player";
 
 let players=[]
 function GeneratePlayers(){
+
     return[
         new Player('goku','./images/goku.jpg',{
             level:5,
@@ -33,6 +34,7 @@ function GeneratePlayers(){
             dexterity:4,
         }),
        ]
+       
 }
 
 function runGame(){
