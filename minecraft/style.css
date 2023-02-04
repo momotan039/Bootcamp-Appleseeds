@@ -1,39 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'VT323', monospace;
 }
 html,body{
     overflow: hidden;
+    height: 100%;
+    background-image: url(images/background.jpg);
 }
-#grid{
-    display: grid;
-    grid-template-columns: repeat(21,1fr);
-    grid-template-rows: repeat(15,1fr);
-    height: 100vh;
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: end;
     width: 100%;
-}
-.item{
-    border: thin solid transparent;
-    cursor: pointer;
-}
-.item:hover{
-    border-color: red;
-}
-.dirt{
-    background: url(images/block.png) center;
-    background-size: contain;
+    height: 100%;
 }
 
-.stone-block{
-    background: url(images/stoneBlock.png) center;
-    background-size: contain;
-}
-.wood-block{
-    background: url(images/woodBlock.png) center;
-    background-size: contain;
-}
-.grass-block{
-    background: url(images/greenBlock.png) center;
-    background-size: contain;
+button{
+    font-size: 5rem;
+    cursor: pointer;
 }

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+html,body{
+    overflow: hidden;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #a17350a3;
+}
+.controls img{
+    width: 70px;
+    height: 70px;
+}
+
+.controls>div{
+    display: flex;
+    text-align: center;
+    gap: 21px;
+}
+.controls .item{
+    border: 3px  solid transparent;
+    background-size: contain !important;
+    cursor: pointer;
+}
+.controls .item:hover{
+    border-color: red;
+}
+.controls .item.selected{
+    border-color: red;
+    color: white;
+}
+#grid{
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+    background-color: skyblue;
+}
+#grid .item{
+    border: thin solid transparent;
+    background-size: contain !important;
+    cursor: pointer;
+}
+#grid  .item:hover{
+    border-color: red;
+}
+.dirt-block{
+    background: url(./images/block.png) center;
+}
+
+.stone-block{
+    background: url(./images/stoneBlock.png) center;
+}
+.wood-block{
+    background: url(./images/woodBlock.png) center;
+}
+.leaf-block{
+    background: url(./images/leaf.png) center;
+}
+.grass-block{
+    background: url(./images/greenBlock.png) center;
+    background-size: cover !important;
+}
+
+@media (max-width:702px) {
+    .scroller{
+        overflow: auto;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .controls img{
+        width: 40px;
+        height: 40px;
+    }
+    #grid{
+        width: 150%;
+    }
+ 
+}
+
+@media (max-width:480px) {
+    #grid{
+        width: 200%;
+    }
+}
