@@ -1,7 +1,6 @@
 export default class InventoryItem {
     static inventory = {};
     static selectedBlock;
-
     constructor(elm,type) {
         this.type=type
         this.h3 = elm,
@@ -66,4 +65,10 @@ export default class InventoryItem {
         return this.inventory
     }
 
-}
+    static addInventroyWhenStart(num){
+        for (const type in this.inventory) {
+                this.inventory[type].stackedCount=num
+                this.inventory[type].refresh()
+            }
+        }
+    }

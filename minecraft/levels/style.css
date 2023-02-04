@@ -41,10 +41,5 @@ html,body{
 
 .center a:nth-child(2){
     background: url(../images/level2.png);
-    background-position: right;
-}
-
-.center a:nth-child(3){
-    background: url(../images/level3.png);
-    background-position: right;
+    background-position: center;
 }

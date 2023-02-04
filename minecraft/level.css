@@ -37,6 +37,10 @@ html,body{
     border-color: red;
     color: white;
 }
+.controls  button{
+    font-size: 2rem;
+    padding: 5px;
+}
 #grid{
     display: grid;
     min-height: 100vh;

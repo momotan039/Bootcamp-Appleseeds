@@ -20,6 +20,10 @@ function handelClickControl() {
     })
 }
 
+document.getElementById('restart').addEventListener('click',()=>{
+    location.reload()
+})
+
 function startGame() {
     Tool.initTools()
     InventoryItem.initInventory()
