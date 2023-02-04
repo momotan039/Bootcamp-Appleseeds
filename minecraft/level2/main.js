@@ -1,9 +1,9 @@
 import Tool from '../models/tool.js'
 import InventoryItem from '../models/inventoryItem.js'
 import Grid from '../models/Grid.js'
-import Level_1 from '../models/Level1.js'
+import Level_2 from '../models/Level2.js'
 const grid = new Grid('grid', 20, 30)
-const level=new Level_1(grid)
+const level=new Level_2(grid)
 // let selectedTool = Tool.selectedTool
 // let selectedBlockInventory = InventoryItem.selectedBlock
 
@@ -25,6 +25,7 @@ function startGame() {
     InventoryItem.initInventory()
     handelClickControl()
     grid.initialize()
+    debugger
     level.initLevel()
 }
 

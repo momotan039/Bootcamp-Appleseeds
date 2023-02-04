@@ -23,17 +23,28 @@ html,body{
 }
 
 .center a{
-    background: red;
     width: 300px;
     height: 300px;
+    border-radius: 11px;
     color: white;
     font-size: 2rem;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-size: cover;
+    align-items: end;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 .center a:nth-child(1){
-    background: linear-gradient(#000000cc,#000000ed),url(../images/level1.png) center;
+    background: url(../images/level1.png);
+    background-position: right;
+}
+
+.center a:nth-child(2){
+    background: url(../images/level2.png);
+    background-position: right;
+}
+
+.center a:nth-child(3){
+    background: url(../images/level3.png);
+    background-position: right;
 }
