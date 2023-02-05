@@ -14,7 +14,7 @@ body {
     background-color: rgb(77, 77, 77);
     color: white;
     scroll-behavior: smooth;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 
 
@@ -67,6 +67,12 @@ header nav ul a {
     font-weight: bold;
     font-size: 26px;
     text-decoration: none;
+}
+header nav ul a.selected li::after{
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    right: 0%;
 }
 
 header nav ul a li {
@@ -247,6 +253,7 @@ body section svg {
 }
 .skills-section .content{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     gap: 17px;
@@ -254,19 +261,22 @@ body section svg {
     align-items: center;
     padding: 20px;
 }
-.skills-section .content >div{
+.skills-section .content > .skill-box{
     height: 320px;
-    width: 100%;
+    width: 800px;
     padding: 20px;
     background-color: #171313;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.skills-section .content >div h1{
+.skills-section .content > .skill-box h1{
     font-size: 2rem;
     margin-bottom: 20px;
     position: relative;
 }
-.skills-section .content >div h1::after{
+.skills-section .content > .skill-box h1::after{
     position: absolute;
     content: "";
     top: 110%;
@@ -292,7 +302,7 @@ body section svg {
 .skills-section .content span.skill::after{
     position: absolute;
     content: "";
-    top: 174%;
+    top: 152%;
     left: 0;
     height: 11px;
     width: 100%;
@@ -302,23 +312,28 @@ body section svg {
 .skills-section .content span.skill::before{
     position: absolute;
     content: "";
-    top: 174%;
+    top: 152%;
     left: 0;
     height: 11px;
-    width: 100%;
     border-radius: 10px;
-    background-color: black;
+    background-color: white;
     z-index: 1;
+    transition: all 1s;
+    width: 0;
 }
 .skills-section .content span.skill.fill::before{
-/* background-color: red; */
+    width: 100%;
 }
-.skills-section .content span span.percent{
+.skills-section .content span.skill span.percent{
     position: absolute;
     color: white;
     font-size: 1rem;
-    top: 100%;
+    top: 80%;
     left: 0;
+    transition: all 1s;
+}
+.skills-section .content span.skill.fill span.percent{
+    left: 90%;
 }
 .hidden {
     display: none !important;
