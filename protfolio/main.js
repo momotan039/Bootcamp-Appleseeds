@@ -22,11 +22,9 @@ function startSkillAnimation(){
 
 function selectItemFromMenu(){
     const menu=document.querySelector('#main-menu ul')   
-    debugger 
     selectedItem.classList.add('selected')
     menu.childNodes.forEach(item=>{
         item.addEventListener('click',()=>{
-            debugger
             selectedItem.classList.remove('selected')
             item.classList.add('selected')
             selectedItem=item
