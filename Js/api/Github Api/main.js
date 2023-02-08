@@ -2,15 +2,14 @@ const input=document.getElementsByTagName('input')[0]
 const users=[]
 const usersElm=document.getElementsByClassName('users')[0]
 
- async function fetchUser(){
+async function fetchUser(){
     const userName=input.value
-    debugger
     if(userName==="")
     {
         alert("Please Enter a username")
         return
     }
-     await fetch('https://api.github.com/users/'+userName)
+    fetch('https://api.github.com/users/'+userName)
     .then((res)=>res.json()).then(user=>{
         if('message' in user)
         {
@@ -44,16 +43,14 @@ function createUesrCard(user){
     img.src=user.avatar_url
     h1.innerText=user.name
     h2.innerText=user.public_repos+" public repo"
-    a.href=user.html_url
-    a.target='_blank'
+    a.href=user.url
     //apend childs
     card.append(img,h1,h2,a)
     return card
 }
 
-// document.addEventListener("keypress", async ()=>{
-//     debugger
-//    if(event.charCode===13)
-//    console.log("sd");
-// //    await fetchUser()
-// })
+document.addEventListener("keypress", ()=>{
+    debugger
+   if(event.charCode===13)
+    fetchUser()
+})
