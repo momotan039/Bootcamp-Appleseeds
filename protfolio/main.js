@@ -11,6 +11,7 @@ window.onload=()=>{
 
     selectItemFromMenu()
     handelArrowButton()
+    handelMenuBarButton()
 }
 
 function startSkillAnimation(){
@@ -40,6 +41,22 @@ function handelArrowButton(){
           selectedItem.classList.remove('selected')
           itemMenu.classList.add('selected')
           selectedItem=itemMenu
+        })
+    })
+}
+
+
+function handelMenuBarButton() {
+    const menu=document.querySelector('#main-menu ul')
+    const bar=document.querySelector('#btnBarMenu')
+    bar.addEventListener('click',()=>{
+        menu.classList.toggle('show')
+    })
+
+    //close the menu when select item
+    menu.childNodes.forEach((c)=>{
+        c.addEventListener('click',()=>{
+            menu.classList.remove('show')
         })
     })
 }
