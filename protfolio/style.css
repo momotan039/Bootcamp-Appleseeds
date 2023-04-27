@@ -8,6 +8,9 @@
     font-family: 'Titillium Web', sans-serif;
     transition: all .3s;
 }
+:root{
+    --main-color:#ffeb2d
+}
 
 html,
 body {
@@ -104,11 +107,13 @@ header nav ul a li::after {
     transition: all .3s;
 }
 nav #btnBarMenu{
-    width: 100px;
-    padding: 0px 36px;
+    background: var(--main-color);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 50px;
     height: 44px;
-    display: none;
-    background-color: #ffffff;
+    scale: 0;
 }
 nav #btnBarMenu i{
     font-size: 30px;
@@ -120,7 +125,7 @@ nav #btnBarMenu i{
         width: auto !important;
     }
     nav #btnBarMenu{
-        display: block;
+       scale: 1;
         z-index: 99;
     }
 
@@ -138,7 +143,7 @@ nav #btnBarMenu i{
         scale: 1;
     }
     header nav ul a.selected{
-        color: #157fb2;
+        color: var(--main-color);
     }
     header nav ul a li::after{
         content: none !important;
@@ -183,6 +188,11 @@ body section svg {
     right: 0;
     width: 100px;
     height: 100px;
+}
+@media (max-width:768px) {
+    .arrowsLink{
+        display: none;
+    }
 }
 
  .arrowsLink .arrows .arrow {
@@ -308,8 +318,8 @@ body section svg {
     padding: 20px;
 }
 .skills-section .content > .skill-box{
-    height: 320px;
-    width: 800px;
+    min-height: 320px;
+    width: 48%;
     padding: 20px;
     background-color: #171313;
     border-radius: 10px;
@@ -332,6 +342,18 @@ body section svg {
     border-radius: 10px;
     background-color: #333;
 }
+
+.skills-section .content > .skill-box .skill img{
+    width: 33px;
+    height: 34px;
+    vertical-align: bottom;
+}
+@media (max-width:768px) {
+.skills-section .content > .skill-box{
+width: 100%;
+}
+}
+
 .skills-section .content  i{
     margin-right: 10px;
 }
@@ -341,7 +363,7 @@ body section svg {
     padding-left: 10px;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #157fb2;
+    color: var(--main-color);
     margin-bottom: 2rem;
     position: relative;
 }
@@ -470,6 +492,12 @@ body section svg {
     z-index: 1;
 }
 
+@media (max-width:580px) {
+    .contact-section .parent .keep-in-touch form {
+        width: 100vw;
+    }
+}
+
 .contact-section .parent .keep-in-touch input,
 .contact-section .parent .keep-in-touch textarea {
     padding: 10px;
@@ -516,4 +544,19 @@ body section svg {
 
 .contact-section .parent .contacts a i {
     font-size: 60px;
+}
+
+
+@media (max-width:768px) {
+    .body{
+        padding-top: 44px !important;
+    }
+    body .portfolio-section,
+    .parent{
+        height: auto !important;
+    }
+   
+    html,body{
+        overflow: auto !important;
+    }
 }
