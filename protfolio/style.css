@@ -582,3 +582,6 @@ width: 100%;
     font-size: 60px;
 }
 
+.contact-section  input[type=submit]{
+    font-size: 1.5rem;
+}

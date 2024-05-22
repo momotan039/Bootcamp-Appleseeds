@@ -95,3 +95,10 @@ function changeRoleCharacters(){
         roleElem.textContent=res
     }, 200);
 }
+
+function sendMail() {
+    var recipient = document.querySelector('#contact input#email').value;
+    var subject = document.querySelector('#contact input#subject').value;
+    var body = document.querySelector('#contact textarea#message').value;
+    window.location.href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
