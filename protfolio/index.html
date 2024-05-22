@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Taha</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/4ba3d81910.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </head>
 <body>
-        <header class="container">
+        <header >
             <nav id="main-menu">
                 <button id="btnBarMenu"><i class="fa fa-bars"></i></button>
                 <ul>
@@ -32,26 +32,28 @@
         <div class="body">
          
             <section id="home" class=" home-section container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#273036" fill-opacity="1" d="M0,96L40,106.7C80,117,160,139,240,165.3C320,192,400,224,480,224C560,224,640,192,720,192C800,192,880,224,960,218.7C1040,213,1120,171,1200,128C1280,85,1360,43,1400,21.3L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
-                  </svg>
-                <h1 class="title">who am I ?</h1>
+                
+                <h1 class="title">About Me</h1>
                 <div class="parent">
                     <div class="left">
-                        <div class="image"></div>
+                        <div class="image">
+                            <img src="images/me.jpg" alt="Me">
+                        </div>
                     </div>
                     <div class="right">
+                        <h1>
+                            Hi 👋 I am <span>Mohammed</span> A
+                            <span class="role">Full Stack</span>
+                            <span>Developer</span>
+                        </h1>
                         <p>
-                            Hi 👋 I am Mohammed
+                            I am an efficient self-learner with a positive attitude, motivated to 
+                            continuously expand my skill set. I possess a deep understanding of the MERN stack and PHP WordPress. I 
+                            have contributed to large scale and personal projects alike. My commitment to continuous learning and 
+                            growth fuels my ability to tackle complex challenges. Moreover, I excel in collaborative environments, 
+                            leveraging my team player mindset to drive success and support the mission of your innovative firm.
                         </p>
-                        <p>
-                            Full Stack developer, with 1-2 years of experience. Motivated to keep learning and expanding my stack to grow and work on complex projects.
-                            I worked on a large-scale projects, personal projects, and as a freelancer.
-                            Continually developing my technical and communication skills with my peers, as I am excellent at solving programming problems.
-                        </p>
-                        <p>
-                            Specialized in Mern Stack | Full Stack | Mobile development
-                        </p>
+                        <a class="btn" href="cv/Mohammed Taha_CV.pdf" target="_blank">Download CV</a>
                     </div>
                 </div>
                 <a class="arrowsLink" href="#skills">
@@ -73,9 +75,7 @@
             </section>
 
             <section id="skills" class="skills-section container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#273036" fill-opacity="1" d="M0,96L40,106.7C80,117,160,139,240,165.3C320,192,400,224,480,224C560,224,640,192,720,192C800,192,880,224,960,218.7C1040,213,1120,171,1200,128C1280,85,1360,43,1400,21.3L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
-                  </svg>
+                
                   <h1 class="title">Skills</h1>
                   <a class="arrowsLink" href="#portfolio">
                     <div class="arrows">
@@ -96,35 +96,34 @@
                 <div class="content">
                     <div class="skill-box">
                      <h1><i class="fas fa-laptop-code"></i>Front End</h1>
-                    <span class="skill"><span class="percent">100%</span><i class="fab fa-html5"></i>Html</span>
-                    <span class="skill"><span class="percent">100%</span><i class="fab fa-css3-alt"></i>Css</span>
-                    <span class="skill"><span class="percent">100%</span><i class="fab fa-js"></i>Java Script</span>
-                    <span class="skill"><span class="percent">100%</span><img width="38px" height="38px" src="images/redux.png">Redux</span>
+                     <span class="skill"><span class="percent">100%</span><i class="fab fa-html5"></i>Html</span>
+                     <span class="skill"><span class="percent">100%</span><i class="fab fa-css3-alt"></i>Css</span>
+                     <span class="skill"><span class="percent">100%</span><i class="fab fa-js"></i>Java Script</span>
+                     <span class="skill"><span class="percent">100%</span><img width="38px" height="38px" src="images/redux.png">Redux</span>
                     </div>
                     <div class="skill-box">
                         <h1><i class="fab fa-free-code-camp"></i>Back End</h1>
                         <span class="skill"><span class="percent">100%</span><i class="fas fa-code"></i>C#</span>
-                        <span class="skill"><span class="percent">80%</span><i class="fab fa-php"></i>Php</span>
-                        <span class="skill"><span class="percent">85%</span><i class="fab fa-node-js"></i>Node</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fab fa-php"></i>Php</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fab fa-node-js"></i>Node</span>
                     </div>
                     <div class="skill-box">
                         <h1><i class="fas fa-stream"></i>Frameworks & Libraries</h1>
-                        <span class="skill"><span class="percent">80%</span><i class="fas fa-code"></i>.netCore</span>
-                        <span class="skill"><span class="percent">85%</span><i class="fab fa-angular"></i>Angular</span>
-                        <span class="skill"><span class="percent">90%</span><i class="fab fa-react"></i>React</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fas fa-code"></i>.netCore</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fab fa-angular"></i>Angular</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fab fa-react"></i>React.js</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fa-solid fa-code"></i>Next.js</span>
                     </div>
                     <div class="skill-box">
                         <h1><i class="fas fa-mobile-alt"></i>Mobile Development</h1>
-                        <span class="skill"><span class="percent">70%</span><i class="fab fa-android"></i>Android</span>
-                        <span class="skill"><span class="percent">90%</span> <img width="38px" height="38px" src="images/flutter.png"> Flutter</span>
+                        <span class="skill"><span class="percent">100%</span><i class="fab fa-android"></i>Android</span>
+                        <span class="skill"><span class="percent">100%</span> <img width="38px" height="38px" src="images/flutter.png"> Flutter</span>
                     </div>
                 </div>
             </section>
 
             <section id="portfolio" class=" portfolio-section container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#273036" fill-opacity="1" d="M0,96L40,106.7C80,117,160,139,240,165.3C320,192,400,224,480,224C560,224,640,192,720,192C800,192,880,224,960,218.7C1040,213,1120,171,1200,128C1280,85,1360,43,1400,21.3L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
-                  </svg>
+              
                   <h1 class="title">My Projects</h1>
                 <div class="projects">
                     <a  target="_blank" href="https://recommended-shows-mt.netlify.app">
@@ -244,9 +243,6 @@
             </section>
 
             <section id="contact" class="contact-section container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#273036" fill-opacity="1" d="M0,96L40,106.7C80,117,160,139,240,165.3C320,192,400,224,480,224C560,224,640,192,720,192C800,192,880,224,960,218.7C1040,213,1120,171,1200,128C1280,85,1360,43,1400,21.3L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
-                  </svg>
                   <h1 class="title">Contanct Me</h1>
                   <div class="parent">
                     <div class="keep-in-touch">
@@ -260,7 +256,7 @@
                                 <input placeholder="Subject" type="text">
                             </div>
                             <textarea placeholder="Message" cols="30" rows="10"></textarea>
-                            <button type="submit"><span>Send</span> Message</button>
+                            <a class="btn" href="mailto:momotaha039@gmail.com">Send Message</a>
                         </form>
                     </div>
                     <hr>
@@ -271,8 +267,29 @@
                         <a target="_blank" href="https://www.linkedin.com/in/mohammed-taha-07141422b/">
                             <i class="fab fa-linkedin"></i>
                         </a>
+
+                        <a target="_blank" href="https://www.upwork.com/freelancers/mohammed039">
+                            <i class="fa-brands fa-square-upwork"></i>
+                        </a>
+                        
                     </div>
                   </div>
+                  <a class="arrowsLink goTop" href="#home">
+                    <div class="arrows">
+                        <div class="arrow">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+                        <div class="arrow">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+                        <div class="arrow">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+                    </div>
+                </a>
             </section>
         </div>
 </body>

@@ -12,6 +12,7 @@ window.onload=()=>{
     selectItemFromMenu()
     handelArrowButton()
     handelMenuBarButton()
+    changeRoleCharacters()
 }
 
 function startSkillAnimation(){
@@ -59,4 +60,38 @@ function handelMenuBarButton() {
             menu.classList.remove('show')
         })
     })
+}
+
+function changeRoleCharacters(){
+    const roleElem=document.querySelector('#home .role')
+    const roles=['Full Stack','Mern Stack','Frontend','Backend']
+    let role;
+    let roleKey=0
+    chooseRole=()=>{
+        if(roleKey==roles.length-1)
+        roleKey=0
+        return roles[roleKey++]
+    }
+    role=chooseRole()
+    let len=role.length;
+    let isRemoving=true;
+    setInterval(() => {
+        if(len==0)
+       {
+        role=chooseRole()
+        isRemoving=false
+       }
+       if(len==role.length)
+       {
+        isRemoving=true
+       }
+
+       if(isRemoving)
+        len--
+        if(!isRemoving)
+        len++
+
+        const res=role.slice(0,len)
+        roleElem.textContent=res
+    }, 200);
 }
