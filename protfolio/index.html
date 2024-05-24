@@ -249,16 +249,16 @@
                         <h1>Get in touch</h1>
                         <form onsubmit="sendMail(); return false;">
                             <div class="top">
-                                <input placeholder="FirstName" type="text">
-                                <input placeholder="LastName" type="text">
+                                <input required placeholder="FirstName" type="text">
+                                <input required placeholder="LastName" type="text">
                             </div>
                             <div class="center">
-                                <input type="email" id="email" placeholder="Email" type="text">
+                                <input required type="email" id="email" placeholder="Email" type="text">
                             </div>
                             <div class="center">
-                                <input id="subject" placeholder="Subject" type="text">
+                                <input required id="subject" placeholder="Subject" type="text">
                             </div>
-                            <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea>
+                            <textarea required id="message" placeholder="Message" cols="30" rows="10"></textarea>
                             <input class="btn" type="submit" value="Send Message">
                         </form>
                     </div>
